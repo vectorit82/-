@@ -7,8 +7,8 @@ npm-debug.*
 
 
 .dist/
-node_modyles/
+node_modules/
 package-lock.json
 app/css/*
 
-node_modules
+
