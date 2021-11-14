@@ -49,16 +49,16 @@
         </div>
       </div>
     </div>
-    <div class="header__footer">
+    <div class="header__bottom">
       <div class="container">
-        <div class="header__footer-inner">
+        <div class="header__bottom-inner">
           <a class="logo" href="#">
             <img src="images/header/logo.svg" alt="Логотип">
           </a>
           <a class="menu__catalog" href="#">Каталог продуктов</a>
           <form class="form" action="#">
             <input class="form__input" type="text" placeholder="Найти в магазине ...">
-            <button class="form__btn">ПОИСК</button>
+            <button class="form__btn" type="submit">ПОИСК</button>
           </form>
           <ul class="user-nav">
             <li class="user-nav__item">
@@ -70,15 +70,189 @@
               </a>
             </li>
             <li class="user-nav__item">
-            <a class="user-nav__link user-nav__link--cart" href="#">
-              <span class="user-nav__num">12</span>
-            </a>
+              <a class="user-nav__link user-nav__link--cart" href="#">
+                <span class="user-nav__num">12</span>
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </div>
   </header>
+
+  <main>
+
+    <section class="slider__top">
+      <div class="slider__top-inner">
+        <div class="slider__top-item" style="background-image: url('images/slider/vegetables.jpg')">
+          <div class="container">
+            <div class="slider__top-offer">
+              <h2 class="slider__top-title">
+                СВЕЖАЧОК ВАМ в ХАТУ
+                <span class="slider__top-subtitle">
+                  Скидка -50%
+                </span>
+              </h2>
+              <p class="slider__top-text">
+                Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
+              </p>
+              <button class="slider__top-btn" type="button">Купить сейчас</button>
+            </div>
+          </div>
+        </div>
+        <div class="slider__top-item" style="background-image: url('images/slider/tomato.jpg')">
+          <div class="container">
+            <div class="slider__top-offer">
+              <h2 class="slider__top-title">
+                НАКРУТИ СЕБЕ ТОМАТОВ
+                <span class="slider__top-subtitle">
+                  АКЦИЯ: 3 кг по цене 1
+                </span>
+              </h2>
+              <p class="slider__top-text">
+                Только с 12 по 15 июля скидка на домашние помидорчики
+              </p>
+              <button class="slider__top-btn">Купить сейчас</button>
+            </div>
+          </div>
+        </div>
+        <div class="slider__top-item" style="background-image: url('images/slider/greens.jpg')">
+          <div class="container">
+            <div class="slider__top-offer">
+              <h2 class="slider__top-title">
+                Пусть остальные
+                позеленеют от зависти
+                <span class="slider__top-subtitle">
+                  Распродажа зелени
+                </span>
+              </h2>
+              <button class="slider__top-btn" type="button">Купить сейчас</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info">
+      <div class="container">
+        <ul class="info__inner">
+          <li class="info__item info__item--delivery">
+            <h4 class="info__title">
+              Бесплатная доставка
+            </h4>
+            <p class="info__text">
+              Для заказов на сумму от 500 ₽
+            </p>
+          </li>
+          <li class="info__item info__item--return">
+            <h4 class="info__title">
+              Возврат товара
+            </h4>
+            <p class="info__text">
+              Если товары были испорчены
+            </p>
+          </li>
+          <li class="info__item info__item--support">
+            <h4 class="info__title">
+              Поддержка 24/7
+            </h4>
+            <p class="info__text">
+              Лучшие операторы
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <a class="logo footer__logo" href="#">
+          <img src="images/header/logo.svg" alt="Логотип">
+        </a>
+        <div class="footer__top">
+          <form class="footer__form" action="#">
+            <label class="footer__form-label" for="text">Следите за нашими акциями</label>
+            <input class="footer__form-input" type="text" placeholder="email@email.com">
+            <button class="footer__form-btn" type="submit">ПОДПИСАТЬСЯ</button>
+          </form>
+          <ul class="footer__links">
+            <li class="footer__item">
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a class="footer__link" href="#">О нас</a>
+                </li>
+                <li class="footer__list-item">
+                  <a class="footer__link" href="#">Контакты</a>
+                </li>
+                <li class="footer__list-item">
+                  <a class="footer__link" href="#">Публичная оферта</a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer__item">
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a class="footer__link" href="#">Оплата и доставка</a>
+                </li>
+                <li class="footer__list-item">
+                  <a class="footer__link" href="#">Вакансии</a>
+                </li>
+                <li class="footer__list-item">
+                  <a class="footer__link" href="#">Акции</a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer__item">
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a class="footer__link" href="#">Отзывы</a>
+                </li>
+                <li class="footer__list-item">
+                  <a class="footer__link" href="#">Новости</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="footer__contacts">
+            <p class="footer__contact">
+              Горячая линия+7 907 288 365
+            </p>
+            <p class="footer__contact">
+              Санкт-Петербург, ул. Ленина, 1
+            </p>
+            <ul class="social">
+              <li class="social__item">
+                <a class="social__link" style="background-image: url('images/footer/facebook.svg')" href="#"></a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" style="background-image: url('images/footer/youtube.svg')" href="#"></a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" style="background-image: url('images/footer/telegram.svg')" href="#"></a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" style="background-image: url('images/footer/instagram.svg')" href="#"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span class="footer_copyright">© 2021 ФРЕШОК</span>
+          <ul class="carts">
+            <li class="carts__item">
+              <a class="carts__link carts__link--visa" style="background-image: url('images/footer/visa.svg')" href="#"></a>
+            </li>
+            <li class="carts__item">
+              <a class="carts__link  carts__link--mc" style="background-image: url('images/footer/mc.svg')" href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+
+  </main>
+
 
 
   <script src="js/main.min.js"></script>
