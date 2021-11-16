@@ -8,5 +8,7 @@ $(function () {
 
 
     var mixer = mixitup('.catalog__inner');
+
+    var mixer = mixitup('.action__content');
   
   });

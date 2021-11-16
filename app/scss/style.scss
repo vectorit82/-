@@ -305,30 +305,6 @@
     margin-bottom: 32px;
   }
 
-  &-btn {
-    padding: 12px 24px;
-    color: $white;
-    background-color: $green-900;
-    font-size: 18px;
-    line-height: 1.3;
-    letter-spacing: 0.03em;
-    border-radius: 4px;
-    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
-  }
-
-  &-btn:hover {
-    background-color: $green-1000;
-  } 
-
-  &-btn:focus {
-    box-shadow: 0 0 0 4px $green-200;
-  } 
-
-  &-btn:active {
-    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
-    color: rgba(255, 255, 255, 0.5);
-  } 
-
   .slick-prev,
   .slick-next {
     display: flex;
@@ -408,44 +384,12 @@
 
 .catalog {
 
-  &__filter {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 48px;
-  }
-
-  &__button:not(:last-child) {
-    margin-right: 24px;
-  }
-
-  &__btn {
-    @extend %opensans-700;
-    color: $dark-500;
-    font-size: 15px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    border-bottom: 3px solid transparent;
-    transition: color 0.5s ease-in-out, border-bottom 0.3s ease-in-out;
-  }
-
-  &__btn:hover {
-    color: $green-900;  
-  }
-
-  &__btn:focus {
-    box-shadow: 0 0 0 3px $green-200;
-    border-radius: 3px;
-  }
-
-  &__btn:active {
-    border-bottom: 3px solid $green-200;
-    box-shadow: none;
-  }
-
   &__inner {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -30px 18px 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 48px;
   }
 
   &__item {
@@ -455,7 +399,6 @@
     border-radius: 6px;
     position: relative;
     padding-bottom: 18px;
-    margin: 0 30px 30px 0;
     transition: border 0.5s ease-in-out;
   }
 
@@ -469,32 +412,6 @@
     top: 12px;
     left: 12px;
     text-align: left;
-  }
-
-  &__marker--new,
-  &__marker--discount,
-  &__marker--hit {
-    display: inline-block;
-    @extend %opensans-700;
-    color: $white;
-    border-radius: 6px;
-    padding: 3px 6px;
-    margin-bottom: 6px;
-    font-size: 10px;
-    line-height: 1;
-    letter-spacing: 0.03em;
-  }
-
-  &__marker--new {    
-    background-color: $green-900;   
-  }
-
-  &__marker--discount {
-    background-color: $red-900;
-  }
-
-  &__marker--hit {
-    background-color: $orange-900;
   }
 
   &__btn-favorite {
@@ -652,6 +569,117 @@
   &__btn-show:active {
     color: rgba(99, 166, 14, 0.5);
     box-shadow: inset 0 10px 4px rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(99, 166, 14, 0);
+  }
+}
+
+.action {
+  background-color: $silver-50;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 48px;
+  }
+
+  &__item {
+    text-align: left;
+  }
+
+  &__item-link {
+    background-color: $white;
+    position: relative;
+    display: flex;
+    padding: 12px;
+    border: 1px solid $silver-600;
+    border-radius: 6px;
+    transition: border 0.5s ease-in-out;
+  }
+
+  &__item-link:hover {
+    border: 1px solid $green-900;
+  }
+
+  &__marker-inner {
+    width: 66px;
+    position: absolute;
+    top: 13px;
+    left: 12px;
+    text-align: left;
+  }
+
+  &__img {
+    margin-right: 12px;
+  }
+
+  &__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+  }
+
+  &__text { 
+    @extend %opensans-600;  
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    color: $dark-900;
+    height: 58px;
+  }
+
+  &__bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__price,
+  &__num {
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: $dark-500;
+  }
+
+  &__price {
+    margin-right: 12px;
+    font-size: 20px;    
+      
+    span {
+      font-size: 14px;
+    }
+  }
+
+  &__old-price {
+    position: relative;
+    font-size: 12px;
+    line-height: 1;
+    color: $silver-600;
+  }
+
+  &__line {
+    position: absolute;
+    background-color: $silver-600;
+    width: 100%;
+    height: 1px;
+    transform: rotate(-20deg);
+    top: 6px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+  }
+
+  &__num {
+    margin-right: 2px;
+    @extend %opensans-700;
+    font-size: 14px;
   }
 }
 
