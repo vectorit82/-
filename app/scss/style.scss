@@ -572,6 +572,52 @@
   }
 }
 
+.advertising {
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 630px 1fr 1fr;
+    grid-gap: 30px;
+    margin-bottom: 72px;
+  }
+
+  &__item:first-child {
+    color: $white;
+
+      a {
+        border-bottom: 2px solid $white;
+      }
+  }
+
+  &__item {
+    padding: 76px 32px;
+    border-radius: 6px;
+    color: $dark-500;
+  }
+
+  &__subtitle,
+  &__link {
+    @extend %opensans-700;
+  }
+
+  &__subtitle {   
+    margin-bottom: 18px;
+    font-size: 12px;
+  }
+
+  &__title {
+    @extend %ruda-600;
+    width: 70%;
+    margin-bottom: 12px;
+    font-size: 30px;
+  }
+
+  &__link {
+    font-size: 14px;
+    border-bottom: 2px solid $dark-500;
+  }
+}
+
 .action {
   background-color: $silver-50;
 
