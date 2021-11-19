@@ -1,10 +1,109 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-size: 14px;
   line-height: 1.4;
   @extend %opensans-400;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
 }
 
-.green__btn {
+main {
+  flex-grow: 1;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.form-search {
+  position: relative;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  &::after {
+    width: 44px;
+    height: 44px;
+    background-color: rgba($white, 0);
+    border-radius: 6px;
+  }
+
+  &::before {
+    background-image: url('../images/header/icon-search.svg');
+    width: 20px;
+    height: 20px;
+    left: 13px;
+    bottom: 14px;
+  }
+
+  &:hover::after {
+    background-color: rgba($white, 0.1);
+  }
+
+  &:active::before {
+    opacity: 0.5;
+  }
+
+  &__input {
+    width: 419px;
+    padding: 15px 52px;
+    border: none;
+    border-radius: 6px 0 0 6px;
+
+    &::placeholder {
+      letter-spacing: 0.03em;
+      color: $dark-800;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    color: $white;
+    padding: 16px 53px;
+    text-transform: uppercase;
+    background-color: $dark-800;
+    border-radius: 0 6px 6px 0;
+    transform: translateY(-1px);
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  &__btn:hover {
+    background-color: $dark-500;
+  }
+
+  &__btn:focus {
+    box-shadow: 0 0 0 4px rgba($white, 0.5);
+  }
+
+  &__btn:active {
+    color: rgba($white, 0.5);
+    box-shadow: none;
+  }
+}
+
+.button {
   padding: 12px 24px;
   color: $white;
   background-color: $green-900;
@@ -13,6 +112,26 @@ body {
   letter-spacing: 0.03em;
   border-radius: 4px;
   transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+
+  &--cart {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+  }
+
+  &--cart path{
+    transition: fill-opacity 0.5s ease-in-out;
+  }
+
+  &--cart:active path{
+    fill-opacity: 0.5;
+  }
+
+  &--white {
+    color: $green-900;
+    border: 1px solid $green-900;
+    background-color: $white;
+  }
 
   &:hover {
     background-color: $green-1000;
@@ -39,12 +158,20 @@ body {
   text-align: center;
 }
 
+// лого сделал инлайновым потому что, в футере ссылка растягивается на весь блок 
+
+.logo {
+  display: inline-block;
+  margin-right: 24px;
+}
+
 .title {
   @extend %ruda-600;
   font-size: 32px;
   color: $dark-900;
   text-transform: uppercase;
   margin-bottom: 30px;
+  letter-spacing: 0.03em;
 }
 
 .filter {
@@ -76,16 +203,28 @@ body {
   }
 
   &__btn:active {
-    border-bottom: 3px solid $green-200;
     box-shadow: none;
+    border-bottom: 3px solid $green-200;
   }
 }
 
-.marker {
+.mixitup-control-active {
+  border-bottom: 3px solid $green-200;
+}
 
-  &__new,
-  &__discount,
-  &__hit {
+.badges {
+  width: 66px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  text-align: left;
+  text-transform: uppercase;
+
+  &--action {
+    top: 13px;
+  }
+
+  &__item {
     display: inline-block;
     @extend %opensans-700;
     color: $white;
@@ -95,18 +234,18 @@ body {
     font-size: 10px;
     line-height: 1;
     letter-spacing: 0.03em;
-  }
 
-  &__new {    
-    background-color: $green-900;   
-  }
-
-  &__discount {
-    background-color: $red-900;
-  }
-
-  &__hit {
-    background-color: $orange-900;
+    &--new {    
+      background-color: $green-900;   
+    }
+  
+    &--discount {
+      background-color: $red-900;
+    }
+  
+    &--hit {
+      background-color: $orange-900;
+    }
   }
 }
 
@@ -115,6 +254,7 @@ body {
   font-size: 10px;
   line-height: 1;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
 
   &__yes {
     color: $green-900;    
@@ -126,5 +266,66 @@ body {
 
   &__no {
     color: $silver-600;
+  }
+}
+
+.social {
+  display: flex;
+  margin-top: 18px;
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__link {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    transition: fill 0.5s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      border-radius: 3px;
+    }
+
+    &:active path,
+    rect {
+      fill: $green-200;
+    }
+
+  }
+}
+
+.cards {
+  display: flex;
+
+  &__item:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__link {
+    display: block;
+    transition: fill 0.5s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      border-radius: 3px;
+    }
+  
+    &:active path,
+    rect {
+      fill: $green-200;
+    }
   }
 }

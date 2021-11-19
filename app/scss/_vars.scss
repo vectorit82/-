@@ -6,6 +6,7 @@ $green-900:  #63A60E;
 $green-200:  #E0EDCF;
 $green-100:  #EFF6E7;
 $white:      #fff;
+$black:      #000;
 $red-900:    #CF3E3B;
 $orange-900: #FF7A00;
 $yellow-900: #FFB800;
@@ -14,37 +15,37 @@ $silver-100: #F6F6F6;
 $silver-50:  #F5F5F5;
 
 %opensans-300 {
-  font-family: 'OpenSans-Light', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-weight: 300;
 }
 
 %opensans-400 {
-  font-family: 'OpenSans-Regular', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-weight: 400;
 }
 
 %opensans-600 {
-  font-family: 'OpenSans-SemiBold', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-weight: 600;
 }
 
 %opensans-700 {
-  font-family: 'OpenSans-Bold', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-weight: 700;
 }
 
 %ruda-600 {
-  font-family: 'Ruda-SemiBold', sans-serif;
+  font-family: 'Ruda', sans-serif;
   font-weight: 600;
 }
 
 %ruda-700 {
-  font-family: 'Ruda-Bold', sans-serif;
+  font-family: 'Ruda', sans-serif;
   font-weight: 700;
 }
 
 %ruda-900 {
-  font-family: 'Ruda-Black', sans-serif;
+  font-family: 'Ruda', sans-serif;
   font-weight: 900;
 }
 
