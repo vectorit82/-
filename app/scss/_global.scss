@@ -31,6 +31,8 @@ main {
 
 .form-search {
   position: relative;
+  max-width: 419px;
+  width: 100%;
 
   &::after,
   &::before {
@@ -45,6 +47,8 @@ main {
     height: 44px;
     background-color: rgba($white, 0);
     border-radius: 6px;
+    top: 3px;
+    left: 0;
   }
 
   &::before {
@@ -64,8 +68,8 @@ main {
   }
 
   &__input {
-    width: 419px;
-    padding: 15px 52px;
+    width: 100%;
+    padding: 15px 10px 15px 52px;
     border: none;
     border-radius: 6px 0 0 6px;
 
@@ -78,7 +82,6 @@ main {
   &__btn {
     position: absolute;
     font-weight: 600;
-    font-size: 14px;
     letter-spacing: 0.03em;
     color: $white;
     padding: 16px 53px;
@@ -90,7 +93,7 @@ main {
   }
 
   &__btn:hover {
-    background-color: $dark-500;
+    background-color: rgba($dark-800, 0.85);
   }
 
   &__btn:focus {
@@ -100,6 +103,71 @@ main {
   &__btn:active {
     color: rgba($white, 0.5);
     box-shadow: none;
+  }
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  &__item:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    &:hover {
+      background-color: rgba($white, 0.1);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 4px #E0EDCF;
+    }
+
+    &:active {
+      opacity: 0.5;
+      box-shadow: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 10px;
+    left: 13px;
+
+    &--like,
+    &--cart {
+      top: 10px;
+      right: 9px;
+    }
+  }
+
+  &__num {
+    position: absolute;
+    border-radius: 50%;
+    color: $red-900;
+    background-color: $white;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 18px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    top: 2px;
+    right: 30px;
+    pointer-events: none;
+    z-index: 1;
   }
 }
 
@@ -119,11 +187,11 @@ main {
     padding: 0;
   }
 
-  &--cart path{
+  &--cart path {
     transition: fill-opacity 0.5s ease-in-out;
   }
 
-  &--cart:active path{
+  &--cart:active path {
     fill-opacity: 0.5;
   }
 
@@ -135,16 +203,16 @@ main {
 
   &:hover {
     background-color: $green-1000;
-  } 
-  
+  }
+
   &:focus {
     box-shadow: 0 0 0 4px $green-200;
-  } 
-  
+  }
+
   &:active {
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
     color: rgba(255, 255, 255, 0.5);
-  } 
+  }
 }
 
 .container {
@@ -166,7 +234,8 @@ main {
 }
 
 .title {
-  @extend %ruda-600;
+  font-family: 'Ruda', sans-serif;
+  font-weight: 600;
   font-size: 32px;
   color: $dark-900;
   text-transform: uppercase;
@@ -178,13 +247,13 @@ main {
   display: flex;
   justify-content: center;
   margin-bottom: 48px;
-    
+
   &__button:not(:last-child) {
     margin-right: 24px;
   }
 
   &__btn {
-    @extend %opensans-700;
+    font-weight: 700;
     color: $dark-500;
     font-size: 15px;
     letter-spacing: 0.03em;
@@ -194,7 +263,7 @@ main {
   }
 
   &__btn:hover {
-    color: $green-900;  
+    color: $green-900;
   }
 
   &__btn:focus {
@@ -226,7 +295,7 @@ main {
 
   &__item {
     display: inline-block;
-    @extend %opensans-700;
+    font-weight: 700;
     color: $white;
     border-radius: 6px;
     padding: 3px 6px;
@@ -235,14 +304,14 @@ main {
     line-height: 1;
     letter-spacing: 0.03em;
 
-    &--new {    
-      background-color: $green-900;   
+    &--new {
+      background-color: $green-900;
     }
-  
+
     &--discount {
       background-color: $red-900;
     }
-  
+
     &--hit {
       background-color: $orange-900;
     }
@@ -250,14 +319,14 @@ main {
 }
 
 .condition {
-  @extend %opensans-600;
+  font-weight: 600;
   font-size: 10px;
   line-height: 1;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 
   &__yes {
-    color: $green-900;    
+    color: $green-900;
   }
 
   &__ends {
@@ -271,7 +340,6 @@ main {
 
 .social {
   display: flex;
-  margin-top: 18px;
 
   &__item:not(:last-child) {
     margin-right: 10px;
@@ -317,12 +385,12 @@ main {
     &:hover {
       opacity: 0.7;
     }
-  
+
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
       border-radius: 3px;
     }
-  
+
     &:active path,
     rect {
       fill: $green-200;

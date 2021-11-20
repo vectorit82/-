@@ -138,74 +138,6 @@
   }
 }
 
-.user-nav {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-
-  &__item:not(:last-child) {
-    margin-right: 12px;
-  }
-
-  &__item {
-    position: relative;
-  }
-
-  &__link {
-    display: block;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    border-radius: 3px;
-    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
-
-    &:hover {
-      background-color: rgba($white, 0.1);
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 4px #E0EDCF;
-    }
-
-    &:active {
-      opacity: 0.5;
-      box-shadow: none;
-    }
-  }
-
-  &__icon {
-    position: absolute;
-
-    &--user {
-      top: 10px;
-      left: 13px;
-    }
-
-    &--like,
-    &--cart {
-      top: 10px;
-      left: 9px;
-    }
-  }
-
-  &__num {
-    position: absolute;
-    border-radius: 50%;
-    color: $red-900;
-    background-color: $white;
-    font-size: 10px;
-    font-weight: 600;
-    line-height: 18px;
-    width: 18px;
-    height: 18px;
-    text-align: center;
-    top: 2px;
-    left: 2px;
-    pointer-events: none;
-    z-index: 1;
-  }
-}
-
 .slider-top {
 
   &__item {
@@ -228,7 +160,8 @@
     font-size: 60px;
     color: $dark-500;
     max-width: 70%;
-    @extend %ruda-900;
+    font-family: 'Ruda', sans-serif;
+    font-weight: 900;
     line-height: 1.3;
     letter-spacing: 0;
     text-transform: uppercase;
@@ -242,7 +175,6 @@
 
   &__text {
     font-size: 16px;
-    line-height: 1.4;
     margin-bottom: 44px;
   }
 
@@ -304,7 +236,7 @@
 .advantages {
   padding: 48px 60px 29px 0;
   background-color: $silver-100;
-  
+
 
   &__inner {
     display: flex;
@@ -330,16 +262,22 @@
       left: 0;
     }
 
-    &--delivery::before {
-      background-image: url('../images/info/scooter.svg');
+    &--delivery {
+      &::before {
+        background-image: url('../images/info/scooter.svg');
+      }
     }
-
-    &--return::before {
-      background-image: url('../images/info/return-box.svg');
+   
+    &--return {
+      &::before {
+        background-image: url('../images/info/return-box.svg');
+      }
     }
-
-    &--support::before {
-      background-image: url('../images/info/24-hours.svg');
+    
+    &--support {
+      &::before {
+        background-image: url('../images/info/24-hours.svg');
+      }
     }
   }
 
@@ -362,7 +300,6 @@
 
   &__item {
     max-width: 300px;
-    height: 409px;
     border: 1px solid rgba(17, 17, 17, 0.2);
     border-radius: 6px;
     position: relative;
@@ -424,13 +361,13 @@
       transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
     }
 
-    &::after {    
+    &::after {
       background-color: rgba($black, 0);
       top: 0;
       right: 0;
       left: 0;
       bottom: 0;
-           
+
     }
 
     &::before {
@@ -464,6 +401,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    // тут без высоты не получается прибить к низу
     height: 101px;
     padding: 0 18px;
   }
@@ -471,7 +409,7 @@
   &__text {
     text-align: left;
     letter-spacing: 0.03em;
-    @extend %opensans-600;
+    font-weight: 600;
     color: $dark-900;
     font-size: 14px;
   }
@@ -555,16 +493,18 @@
 
   &__subtitle,
   &__link {
-    @extend %opensans-700;
+    font-weight: 700;
   }
 
   &__subtitle {
     margin-bottom: 18px;
     font-size: 12px;
+    letter-spacing: 0.1em;
   }
 
   &__title {
-    @extend %ruda-600;
+    font-family: 'Ruda', sans-serif;
+    font-weight: 600;
     width: 70%;
     margin-bottom: 12px;
     font-size: 30px;
@@ -598,7 +538,7 @@
       border-radius: 6px;
       transition: border 0.5s ease-in-out;
     }
-  
+
     &-link:hover {
       border: 1px solid $green-900;
     }
@@ -616,7 +556,7 @@
   }
 
   &__text {
-    @extend %opensans-600;
+    font-weight: 600;
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: 0.03em;
@@ -674,7 +614,7 @@
 
   &__num {
     margin-right: 2px;
-    @extend %opensans-700;
+    font-weight: 700;
     font-size: 14px;
   }
 }
@@ -713,7 +653,7 @@
   }
 
   &__link {
-    @extend %opensans-700;
+    font-weight: 700;
     color: $green-900;
     font-size: 14px;
     line-height: 1.3;
@@ -755,20 +695,21 @@
   }
 
   &__month {
-    @extend %opensans-700;
+    font-weight: 700;
     font-size: 10px;
     line-height: 14px;
     margin-bottom: 4px;
   }
 
   &__day {
-    @extend %ruda-600;
+    font-family: 'Ruda', sans-serif;
+    font-weight: 600;
     font-size: 30px;
     line-height: 30px;
   }
 
   &__text {
-    @extend %opensans-600;
+    font-weight: 600;
     padding: 18px;
     font-size: 16px;
     line-height: 1.5;
@@ -783,14 +724,15 @@
 
   &__logo {
     display: inline-block;
+    margin-bottom: 30px;
   }
 
   &__top {
-    margin: 30px 0;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
   }
- 
+
   &__text {
     display: inline-block;
     margin-bottom: 18px;
@@ -816,30 +758,13 @@
     &-btn {
       position: absolute;
       transform: translateY(1px);
-      @extend %opensans-700;
+      font-weight: 700;
       font-size: 12px;
       line-height: 16px;
       text-transform: uppercase;
-      color: $white;
       border-radius: 0 6px 6px 0;
       padding: 13px 17px;
-      background-color: $green-900;
-      transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
     }
-
-    &-btn:hover {
-      background-color: $green-1000;
-    }
-
-    &-btn:focus {
-      box-shadow: 0 0 0 4px $green-200;
-    }
-
-    &-btn:active {
-      box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
-      color: rgba(255, 255, 255, 0.5);
-    }
-
   }
 
   &__links {
@@ -868,10 +793,14 @@
   &__item {
     display: flex;
     flex-direction: column;
-  }
 
-  &__item:not(:last-child) {
-    margin-right: 75px;
+    &:not(:last-child) {
+      margin-right: 75px;
+    }
+
+    &--contact {
+      margin: 0 0 18px 0;
+    }
   }
 
   &__link:not(:last-child),
@@ -890,7 +819,3 @@
     }
   }
 }
-
-
-
-@import 'media';
