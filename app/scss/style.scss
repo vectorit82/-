@@ -144,6 +144,10 @@
       background-color: $green-200;
       border-radius: 6px 6px 0px 0px;
 
+      &.header__catalog-list {
+        transform: translateY(0);
+      }
+
       &.header__catalog::after {
         transform: rotate(-180deg);
       }
@@ -159,10 +163,6 @@
       padding-top: 15px;
       border: 1px solid #EBEBEB;
       transform: translateY(-200%);
-    }
-
-    &--active {
-      transform: translateY(0);
     }
 
     &-link {
