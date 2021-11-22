@@ -6,7 +6,8 @@ body {
 body {
   font-size: 14px;
   line-height: 1.4;
-  @extend %opensans-400;
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   background-color: $white;
@@ -29,150 +30,8 @@ main {
   overflow: hidden;
 }
 
-.form-search {
-  position: relative;
-  max-width: 419px;
-  width: 100%;
-
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-    cursor: pointer;
-    transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  }
-
-  &::after {
-    width: 44px;
-    height: 44px;
-    background-color: rgba($white, 0);
-    border-radius: 6px;
-    top: 3px;
-    left: 0;
-  }
-
-  &::before {
-    background-image: url('../images/header/icon-search.svg');
-    width: 20px;
-    height: 20px;
-    left: 13px;
-    bottom: 14px;
-  }
-
-  &:hover::after {
-    background-color: rgba($white, 0.1);
-  }
-
-  &:active::before {
-    opacity: 0.5;
-  }
-
-  &__input {
-    width: 100%;
-    padding: 15px 10px 15px 52px;
-    border: none;
-    border-radius: 6px 0 0 6px;
-
-    &::placeholder {
-      letter-spacing: 0.03em;
-      color: $dark-800;
-    }
-  }
-
-  &__btn {
-    position: absolute;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    color: $white;
-    padding: 16px 53px;
-    text-transform: uppercase;
-    background-color: $dark-800;
-    border-radius: 0 6px 6px 0;
-    transform: translateY(-1px);
-    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
-  }
-
-  &__btn:hover {
-    background-color: rgba($dark-800, 0.85);
-  }
-
-  &__btn:focus {
-    box-shadow: 0 0 0 4px rgba($white, 0.5);
-  }
-
-  &__btn:active {
-    color: rgba($white, 0.5);
-    box-shadow: none;
-  }
-}
-
-.user-nav {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-
-  &__item:not(:last-child) {
-    margin-right: 12px;
-  }
-
-  &__item {
-    position: relative;
-  }
-
-  &__link {
-    display: block;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    border-radius: 3px;
-    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
-
-    &:hover {
-      background-color: rgba($white, 0.1);
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 4px #E0EDCF;
-    }
-
-    &:active {
-      opacity: 0.5;
-      box-shadow: none;
-    }
-  }
-
-  &__icon {
-    position: absolute;
-    top: 10px;
-    left: 13px;
-
-    &--like,
-    &--cart {
-      top: 10px;
-      right: 9px;
-    }
-  }
-
-  &__num {
-    position: absolute;
-    border-radius: 50%;
-    color: $red-900;
-    background-color: $white;
-    font-size: 10px;
-    font-weight: 600;
-    line-height: 18px;
-    width: 18px;
-    height: 18px;
-    text-align: center;
-    top: 2px;
-    right: 30px;
-    pointer-events: none;
-    z-index: 1;
-  }
-}
-
 .button {
-  padding: 12px 24px;
+  padding: 10px 24px;
   color: $white;
   background-color: $green-900;
   font-size: 18px;
@@ -210,8 +69,8 @@ main {
   }
 
   &:active {
-    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
-    color: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 4px 4px rgba($black, 0.25);
+    color: rgba($white, 0.5);
   }
 }
 
@@ -226,10 +85,7 @@ main {
   text-align: center;
 }
 
-// лого сделал инлайновым потому что, в футере ссылка растягивается на весь блок 
-
 .logo {
-  display: inline-block;
   margin-right: 24px;
 }
 
@@ -243,157 +99,7 @@ main {
   letter-spacing: 0.03em;
 }
 
-.filter {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 48px;
-
-  &__button:not(:last-child) {
-    margin-right: 24px;
-  }
-
-  &__btn {
-    font-weight: 700;
-    color: $dark-500;
-    font-size: 15px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    border-bottom: 3px solid transparent;
-    transition: color 0.5s ease-in-out, border-bottom 0.3s ease-in-out;
-  }
-
-  &__btn:hover {
-    color: $green-900;
-  }
-
-  &__btn:focus {
-    box-shadow: 0 0 0 3px $green-200;
-    border-radius: 3px;
-  }
-
-  &__btn:active {
-    box-shadow: none;
-    border-bottom: 3px solid $green-200;
-  }
-}
-
 .mixitup-control-active {
   border-bottom: 3px solid $green-200;
 }
 
-.badges {
-  width: 66px;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  text-align: left;
-  text-transform: uppercase;
-
-  &--action {
-    top: 13px;
-  }
-
-  &__item {
-    display: inline-block;
-    font-weight: 700;
-    color: $white;
-    border-radius: 6px;
-    padding: 3px 6px;
-    margin-bottom: 6px;
-    font-size: 10px;
-    line-height: 1;
-    letter-spacing: 0.03em;
-
-    &--new {
-      background-color: $green-900;
-    }
-
-    &--discount {
-      background-color: $red-900;
-    }
-
-    &--hit {
-      background-color: $orange-900;
-    }
-  }
-}
-
-.condition {
-  font-weight: 600;
-  font-size: 10px;
-  line-height: 1;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-
-  &__yes {
-    color: $green-900;
-  }
-
-  &__ends {
-    color: $red-900;
-  }
-
-  &__no {
-    color: $silver-600;
-  }
-}
-
-.social {
-  display: flex;
-
-  &__item:not(:last-child) {
-    margin-right: 10px;
-  }
-
-  &__link {
-    display: block;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    width: 32px;
-    height: 32px;
-    transition: fill 0.5s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 3px $green-200;
-      border-radius: 3px;
-    }
-
-    &:active path,
-    rect {
-      fill: $green-200;
-    }
-
-  }
-}
-
-.cards {
-  display: flex;
-
-  &__item:not(:last-child) {
-    margin-right: 24px;
-  }
-
-  &__link {
-    display: block;
-    transition: fill 0.5s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 3px $green-200;
-      border-radius: 3px;
-    }
-
-    &:active path,
-    rect {
-      fill: $green-200;
-    }
-  }
-}
