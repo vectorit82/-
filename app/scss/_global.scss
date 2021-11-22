@@ -46,11 +46,11 @@ main {
     padding: 0;
   }
 
-  &--cart path {
+  &--cart svg {
     transition: fill-opacity 0.5s ease-in-out;
   }
 
-  &--cart:active path {
+  &--cart:active svg {
     fill-opacity: 0.5;
   }
 
@@ -99,7 +99,5 @@ main {
   letter-spacing: 0.03em;
 }
 
-.mixitup-control-active {
-  border-bottom: 3px solid $green-200;
-}
+
 
