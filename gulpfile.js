@@ -59,6 +59,7 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/swiper/swiper-bundle.min.js',
     'node_modules/slick-carousel/slick/slick.min.js',
     'node_modules/fancybox/dist/js/jquery.fancybox.js',
     'node_modules/rateyo/src/jquery.rateyo.js',
