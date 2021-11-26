@@ -7,33 +7,6 @@ $(function () {
   });
 
 
-  const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    // direction: 'horizontal',
-    // loop: true,
-    // slidesPerView: 6,
-    // spaceBetween: 60
-    // speed: 400,
-    //  spaceBetween: 100,
-  
-    // // If we need pagination
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
-  
-    // // Navigation arrows
-    // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
-    // },
-  
-    // // And if we need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
-  });
-
-
   // $("#rateYo").rateYo({
   //   starWidth: "40px",
   //   normalFill: "#A0A0A0",
@@ -58,4 +31,30 @@ $(function () {
   var mixer1 = mixitup(containerEl1, config);
   var mixer2 = mixitup(containerEl2, config);
 
+});
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  // direction: 'horizontal',
+  loop: true,
+  slidesPerView: 6,
+  spaceBetween: 40
+  // speed: 400,
+  //  spaceBetween: 100,
+
+  // // If we need pagination
+  // pagination: {
+  //   el: '.swiper-pagination',
+  // },
+
+  // // Navigation arrows
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // },
+
+  // // And if we need scrollbar
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
 });

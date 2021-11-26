@@ -120,7 +120,7 @@
     background-color: $white;
     border-radius: 6px;
     z-index: 10;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 
     &::before {
       content: '';
@@ -140,6 +140,7 @@
       height: 4px;
       right: 19px;
       bottom: 22px;
+      transition: transform 0.5s ease-in-out;
     }
 
     &:hover {
@@ -161,12 +162,12 @@
 
   &__catalog-list {
     position: absolute;
-    z-index: 5;
-    top: 35px;
-    width: 240px;
-    border-radius: 0 0 6px 6px;
     background-color: $white;
-    padding-top: 15px;
+    z-index: 5;
+    top: 32px;
+    width: 240px;
+    border-radius: 0 0 6px 6px;   
+    padding-top: 20px;
     border: 1px solid $silver;
     transform: translateY(-200%);
     opacity: 0;
@@ -174,11 +175,13 @@
 
     &:hover {
       transform: translateY(0);
+      opacity: 1;
     }
   }
 
   &__catalog-link {
     display: block;
+    
     padding: 15px 24px;
     border-top: 0.5px solid $silver;
     border-bottom: 0.5px solid $silver;
@@ -311,15 +314,14 @@
 
   &__num {
     position: absolute;
-    border-radius: 50%;
+    border-radius: 100px;
     color: $red-900;
     background-color: $white;
     font-size: 10px;
     font-weight: 600;
     line-height: 18px;
-    width: 18px;
-    height: 18px;
     text-align: center;
+    padding: 0 3px;
     top: 2px;
     right: 30px;
     pointer-events: none;
@@ -752,6 +754,7 @@
 
 .advertising {
   text-align: left;
+  padding-bottom: 72px;
 
   &__inner {
     display: grid;
@@ -942,35 +945,25 @@
 
 .partners {
 
-  &__list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  &__wrapper {
+    margin: 0 auto;
+    width: 1180px;
+    height: 60px;
   }
-
-  &__item {
+  
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80px;
+    height: 60px;
     opacity: 0.5;
     transition: opacity 0.5s ease-in-out;
     cursor: pointer;
 
     &:hover {
       opacity: 1;
-    }
-  }
-}
-
-.swiper {
-
-  &__wrapper {
-    text-align: center;
-    width: 1180px;
-    height: 60px;
-    background-color: cadetblue;
-  }
-
-  &__slide {
-    width: 80px;
-    height: 60px;
+    } 
   }
 }
 
