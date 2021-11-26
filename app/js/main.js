@@ -9,9 +9,12 @@ $(function () {
 
   const swiper = new Swiper('.swiper', {
     // Optional parameters
-    slidesPerView: 1,
-    // direction: 'vertical',
+    // direction: 'horizontal',
     // loop: true,
+    // slidesPerView: 6,
+    // spaceBetween: 60
+    // speed: 400,
+    //  spaceBetween: 100,
   
     // // If we need pagination
     // pagination: {
@@ -54,9 +57,5 @@ $(function () {
 
   var mixer1 = mixitup(containerEl1, config);
   var mixer2 = mixitup(containerEl2, config);
-
-  var mixer = mixitup('.catalog__inner');
-
-  var mixer = mixitup('.action__content');
 
 });

@@ -13,6 +13,10 @@ body {
   background-color: $white;
 }
 
+img {
+  object-fit: cover;
+}
+
 .main {
   flex-grow: 1;
 }
