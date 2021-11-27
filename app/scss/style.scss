@@ -24,8 +24,31 @@
     font-weight: 700;
   }
 
+  &__menu-btn {
+    position: relative;
+    display: none;
+    z-index: 10;
+
+    @include r($md) {
+      display: block;
+    }
+  }
+
+  &__btn-icon {
+    stroke: $white;
+    width: 30px;
+    height: 20px;
+  }
+
   &__list {
     display: flex;
+
+    &--right {
+
+      @include r($md) {
+        display: none;
+      }
+    }
   }
 
   &__item {
@@ -44,6 +67,11 @@
       margin-right: 26px;
       padding-left: 42px;
 
+      @include r($md) {
+        margin-right: 0;
+        padding-left: 32px;
+      }
+
       & svg {
         width: 32px;
       }
@@ -51,6 +79,10 @@
 
     &--tel {
       padding-left: 33px;
+
+      @include r($md) {
+        padding-left: 20px;
+      }
 
       & svg {
         width: 22px;
@@ -93,6 +125,13 @@
     }
   }
 
+  &__link-text {
+
+    @include r($md) {
+      display: none;
+    }
+  }
+
   &__bottom {
     background-color: $green-900;
   }
@@ -102,12 +141,30 @@
     justify-content: space-between;
     align-items: center;
     padding: 25px 0;
+
+    @include r($lg) {
+      flex-wrap: wrap;
+      padding: 11px 0;
+    }
+
+    @include r($sm) {
+      padding: 0;
+    }
   }
 
   &__catalog-menu {
     max-width: 240px;
     width: 100%;
     position: relative;
+
+    @include r($lg) {
+      max-width: 100%;
+      order: 4;
+    }
+
+    @include r($sm) {
+      display: none;
+    }
   }
 
   &__catalog {
@@ -164,9 +221,9 @@
     position: absolute;
     background-color: $white;
     z-index: 5;
-    top: 32px;
+    top: 30px;
     width: 240px;
-    border-radius: 0 0 6px 6px;   
+    border-radius: 0 0 6px 6px;
     padding-top: 20px;
     border: 1px solid $silver;
     transform: translateY(-200%);
@@ -181,7 +238,7 @@
 
   &__catalog-link {
     display: block;
-    
+
     padding: 15px 24px;
     border-top: 0.5px solid $silver;
     border-bottom: 0.5px solid $silver;
@@ -193,13 +250,95 @@
       border-left: 3px solid rgba($green-900, 1);
     }
   }
+
+  &__form-menu {
+    max-width: 577px;
+    width: 100%;
+
+    @include r($xxx) {
+      max-width: 477px;
+    }
+
+    @include r($xl) {
+      max-width: 327px;
+    }
+
+    @include r($lg) {
+      max-width: 100%;
+      order: 3;
+      margin: 10px 0;
+    }
+
+    @include r($sm) {
+      width: 50px;
+      margin-left: auto;
+      order: 0;
+    }
+  }
+
+  &__form-icon {
+    width: 24px;
+    height: 24px;
+    fill: $white;
+  }
+
+  &__btn-menu {
+    display: none;
+
+    @include r($sm) {
+      display: block;
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 3px;
+      transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+      &:hover {
+        background-color: rgba($white, 0.1);
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 4px #E0EDCF;
+      }
+
+      &:active {
+        opacity: 0.5;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.logo {
+
+  &__img {
+
+    @include r($md) {
+      display: none;
+    }
+  }
+
+  &__mini {
+    display: none;
+
+    @include r($md) {
+      display: block;
+    }
+  }
 }
 
 .form-search {
   position: relative;
-  max-width: 577px;
   width: 100%;
   padding-right: 158px;
+
+  @include r($xl) {
+    padding-right: 104px;
+  }
+
+  @include r($sm) {
+    display: none;
+  }
 
   &::after,
   &::before {
@@ -257,6 +396,10 @@
     transform: translateY(-1px);
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
 
+    @include r($xl) {
+      padding: 16px 26px;
+    }
+
     &:hover {
       background-color: rgba($dark-800, 0.85);
     }
@@ -281,7 +424,13 @@
 
     &:not(:last-child) {
       margin-right: 12px;
+
+      @include r($sm) {
+        display: none;
+        order: 4;
+      }
     }
+
   }
 
   &__link {
@@ -291,6 +440,11 @@
     height: 50px;
     border-radius: 3px;
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    @include r($sm) {
+      width: 44px;
+      height: 44px;
+    }
 
     &:hover {
       background-color: rgba($white, 0.1);
@@ -310,6 +464,11 @@
     width: 30px;
     height: 30px;
     fill: $white;
+
+    @include r($sm) {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &__num {
@@ -326,6 +485,10 @@
     right: 30px;
     pointer-events: none;
     z-index: 1;
+
+    @include r($sm) {
+      right: 25px;
+    }
   }
 }
 
@@ -950,7 +1113,7 @@
     width: 1180px;
     height: 60px;
   }
-  
+
   &__slide {
     display: flex;
     flex-direction: column;
@@ -963,7 +1126,7 @@
 
     &:hover {
       opacity: 1;
-    } 
+    }
   }
 }
 

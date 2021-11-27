@@ -11,13 +11,20 @@
 
 <body>
 
-  <!-- HEADER//HEADER//HEADER//HEADER//HEADER//HEADER//HEADER//HEADER//HEADER// -->
+
 
   <header class="header">
     <nav class="header__menu">
       <div class="header__top">
         <div class="container">
           <div class="header__inner">
+
+            <button class="header__menu-btn">
+              <span class="sr-only">Открыть меню</span>
+              <svg class="header__btn-icon">
+                <use xlink:href="images/sprite.svg#icon-burger"></use>
+              </svg>
+            </button>
 
             <ul class="header__list">
 
@@ -26,7 +33,7 @@
                   <svg class="header__link-icon">
                     <use xlink:href="images/sprite.svg#icon-del-address"></use>
                   </svg>
-                  адрес и место доставки
+                  <span class="header__link-text">адрес и место доставки</span>
                 </a>
               </li>
 
@@ -35,13 +42,13 @@
                   <svg class="header__link-icon">
                     <use xlink:href="images/sprite.svg#icon-tel"></use>
                   </svg>
-                  горячая линия 24/7
+                  <span class="header__link-text">горячая линия 24/7</span>
                 </a>
               </li>
 
             </ul>
 
-            <ul class="header__list">
+            <ul class="header__list header__list--right">
 
               <li class="header__item">
                 <a class="header__link" href="#">
@@ -72,6 +79,7 @@
 
             <a class="logo" href="#">
               <img class="logo__img" src="images/svg/icon-logo.svg" width="200" height="60" alt="Логотип">
+              <img class="logo__mini" src="images/svg/icon-logo-mini.svg" alt="">
             </a>
 
             <div class="header__catalog-menu" data-uk-dropdown>
@@ -131,12 +139,24 @@
 
             </div>
 
-            <form class="form-search" action="#">
-              <label class="sr-only" for="search">Поиск</label>
-              <input class="form-search__input" type="search" id="search" name="search"
-                placeholder="Найти в магазине ..." required>
-              <button class="form-search__btn" type="submit">поиск</button>
-            </form>
+            <div class="header__form-menu">
+
+              <button class="header__btn-menu">
+                <span class="sr-only">Поиск</span>
+                  <svg class="header__form-icon">
+                    <use xlink:href="images/sprite.svg#icon-search"></use>
+                  </svg>
+              </button>
+
+          
+              <form class="form-search" action="#">
+                <label class="sr-only" for="search">Поиск</label>
+                <input class="form-search__input" type="search" id="search" name="search"
+                  placeholder="Найти в магазине ..." required>
+                <button class="form-search__btn" type="submit">поиск</button>
+              </form>
+
+            </div>
 
             <ul class="user-nav">
 
@@ -177,13 +197,13 @@
     </nav>
   </header>
 
-  <!-- MAIN//MAIN//MAIN//MAIN//MAIN//MAIN//MAIN//MAIN//MAIN//MAIN//MAIN//MAIN// -->
 
-  <main class="main">
+
+   <main class="main">
 
     <h1 class="sr-only">Онлан маркет продуктов питания</h1>
 
-    <!-- SLIDER TOP//SLIDER TOP//SLIDER TOP//SLIDER TOP//SLIDER TOP//SLIDER TOP// -->
+   
 
     <section class="slider-top">
 
@@ -253,7 +273,7 @@
 
     </section>
 
-    <!-- ADVANTAGES//ADVANTAGES//ADVANTAGES//ADVANTAGES//ADVANTAGES//ADVANTAGES// -->
+   
 
     <section class="advantages">
       <div class="container">
@@ -293,7 +313,7 @@
       </div>
     </section>
 
-    <!-- TOP PRODUCT//TOP PRODUCT//TOP PRODUCT//TOP PRODUCT//TOP PRODUCT// -->
+    
 
     <section class="top-product section">
       <div class="container">
@@ -663,7 +683,7 @@
 
     </section>
 
-    <!-- ADVERTISING//ADVERTISING//ADVERTISING//ADVERTISING//ADVERTISING// -->
+   
 
     <section class="advertising">
       <h2 class="sr-only">Специальные предложения</h2>
@@ -715,7 +735,7 @@
       </div>
     </section>
 
-    <!-- ACTION//ACTION//ACTION//ACTION//ACTION//ACTION//ACTION//ACTION//ACTION// -->
+  
 
     <section class="action section">
       <div class="container">
@@ -1004,7 +1024,7 @@
       </div>
     </section>
 
-    <!-- PARTNERS//PARTNERS//PARTNERS//PARTNERS//PARTNERS//PARTNERS//PARTNERS// -->
+   
 
     <section class="partners section">
 
@@ -1097,7 +1117,7 @@
       </div>
     </section>
 
-    <!-- NEWS//NEWS//NEWS//NEWS//NEWS//NEWS//NEWS//NEWS//NEWS//NEWS//NEWS//NEWS// -->
+   
 
     <section class="news">
       <div class="container">
@@ -1175,7 +1195,7 @@
 
   </main>
 
-  <!-- FOOTER//FOOTER//FOOTER//FOOTER//FOOTER//FOOTER//FOOTER//FOOTER//FOOTER//FOOTER// -->
+ 
 
   <footer class="footer">
     <div class="container">
@@ -1320,7 +1340,7 @@
           </ul>
 
         </div>
-      </div>
+      </div>z
     </div>
   </footer>
 
