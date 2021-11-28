@@ -24,14 +24,50 @@
     font-weight: 700;
   }
 
-  &__menu-btn {
-    position: relative;
+  &__burger {
     display: none;
-    z-index: 10;
 
-    @include r($md) {
+    @include r($lg) {
       display: block;
     }
+  }
+
+  &__burger-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($black, 0.15);
+    z-index: 20;
+  }
+
+  &__burger-wrapper {
+    position: relative;
+    max-width: 80%;
+    width: 100%;
+    background-color: $white;
+    z-index: 21;
+  }
+
+  &__burger-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 22;
+  }
+
+  &__close-icon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    z-index: 600;
+  }
+
+  &__menu-btn {
+    position: relative;
+    z-index: 10;
+    margin-left: 5px;
   }
 
   &__btn-icon {
@@ -45,7 +81,7 @@
 
     &--right {
 
-      @include r($md) {
+      @include r($lg) {
         display: none;
       }
     }
@@ -67,7 +103,7 @@
       margin-right: 26px;
       padding-left: 42px;
 
-      @include r($md) {
+      @include r($lg) {
         margin-right: 0;
         padding-left: 32px;
       }
@@ -80,7 +116,7 @@
     &--tel {
       padding-left: 33px;
 
-      @include r($md) {
+      @include r($lg) {
         padding-left: 20px;
       }
 
@@ -127,7 +163,7 @@
 
   &__link-text {
 
-    @include r($md) {
+    @include r($lg) {
       display: none;
     }
   }
@@ -146,10 +182,6 @@
       flex-wrap: wrap;
       padding: 11px 0;
     }
-
-    @include r($sm) {
-      padding: 0;
-    }
   }
 
   &__catalog-menu {
@@ -160,9 +192,6 @@
     @include r($lg) {
       max-width: 100%;
       order: 4;
-    }
-
-    @include r($sm) {
       display: none;
     }
   }
@@ -266,10 +295,6 @@
     @include r($lg) {
       max-width: 100%;
       order: 3;
-      margin: 10px 0;
-    }
-
-    @include r($sm) {
       width: 50px;
       margin-left: auto;
       order: 0;
@@ -285,7 +310,7 @@
   &__btn-menu {
     display: none;
 
-    @include r($sm) {
+    @include r($lg) {
       display: block;
       position: relative;
       width: 44px;
@@ -313,15 +338,19 @@
 
   &__img {
 
-    @include r($md) {
+    @include r($lg) {
       display: none;
     }
+  }
+
+  &__img-burger {
+    display: block;
   }
 
   &__mini {
     display: none;
 
-    @include r($md) {
+    @include r($lg) {
       display: block;
     }
   }
@@ -333,10 +362,11 @@
   padding-right: 158px;
 
   @include r($xl) {
+    max-width: 377px;
     padding-right: 104px;
   }
 
-  @include r($sm) {
+  @include r($lg) {
     display: none;
   }
 
@@ -377,6 +407,10 @@
     width: 100%;
     padding: 15px 10px 15px 52px;
     border-radius: 6px 0 0 6px;
+
+    @include r($xl) {
+      max-width: 250px;
+    }
 
     &::placeholder {
       letter-spacing: 0.03em;
@@ -425,7 +459,7 @@
     &:not(:last-child) {
       margin-right: 12px;
 
-      @include r($sm) {
+      @include r($lg) {
         display: none;
         order: 4;
       }
@@ -441,7 +475,7 @@
     border-radius: 3px;
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
 
-    @include r($sm) {
+    @include r($lg) {
       width: 44px;
       height: 44px;
     }
@@ -465,7 +499,7 @@
     height: 30px;
     fill: $white;
 
-    @include r($sm) {
+    @include r($lg) {
       width: 24px;
       height: 24px;
     }
@@ -486,7 +520,7 @@
     pointer-events: none;
     z-index: 1;
 
-    @include r($sm) {
+    @include r($lg) {
       right: 25px;
     }
   }
@@ -497,17 +531,36 @@
 .slider-top {
 
   &__item {
-    display: flex;
-    align-items: center;
+    position: relative;
     @extend %bg;
     height: 600px;
+    max-width: 100%;
+    object-fit: contain;
+
+    @include r($sm) {
+      height: 320px;
+    }
+  }
+
+  &__container {
+    max-width: 1290px;
+    margin: 0 auto;
   }
 
   &__offer {
+    position: absolute;
+    max-width: 1290px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 24px 24px 36px;
     border-radius: 4px;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include r($lg) {
+      padding: 15px 15px 27px;
+    }
   }
 
   &__title {
@@ -519,19 +572,56 @@
     text-transform: uppercase;
     margin-bottom: 12px;
 
-    @include line-clamp(60, 1.3, 3)
+    @include line-clamp(60, 1.3, 3);
+
+    @include r($xl) {
+      font-size: 42px;
+      max-width: 58%;
+    }
+
+    @include r($lg) {
+      font-size: 36px;
+    }
+
+    @include r($md) {
+
+      max-width: 65%;
+    }
+
+    @include r($sm) {
+      max-width: 80%;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
   }
 
   &__subtitle {
     font-size: 60px;
     color: $red-900;
+
+    @include r($xl) {
+      font-size: 42px;
+    }
+
+    @include r($lg) {
+      font-size: 36px;
+    }
+
+    @include r($sm) {
+      font-size: 20px;
+    }
   }
 
   &__text {
     font-size: 16px;
     margin-bottom: 44px;
 
-    @include line-clamp(16, 1.4, 2)
+    @include line-clamp(16, 1.4, 2);
+
+    @include r($sm) {
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
   }
 
   &__slick {
@@ -565,7 +655,7 @@
 
     // :disabled почему то не работает
 
-    &:disabled path {
+    &:disabled.slick-disabled svg {
       fill: $silver-600;
     }
 
@@ -587,27 +677,84 @@
   }
 }
 
+.slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50px);
+
+  @include r($sm) {
+    transform: translateY(-36px);
+  }
+
+  & li:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  & button {
+    background-color: $white;
+    border: 1px solid $silver-600;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    padding: 0;
+
+    @include r($sm) {
+      width: 10px;
+       height: 10px;
+    }
+  }
+
+  & .slick-active button {
+    background-color: $green-900;
+    
+  }
+}
+
 // ADVANTAGES// ADVANTAGES// ADVANTAGES// ADVANTAGES
 
 .advantages {
   padding: 48px 60px 29px 0;
   background-color: $silver-100;
 
+  @include r($lg) {
+    padding: 30px 0;
+  }
+
 
   &__inner {
     display: flex;
     justify-content: center;
+
+    @include r($lg) {
+      flex-direction: column;
+    }
   }
 
-  &__item:not(:last-child) {
-    margin-right: 66px;
-  }
+
 
   &__item {
     max-width: 264px;
     padding-left: 75px;
     position: relative;
+    object-fit: cover;
     @extend %bg;
+
+    @include r($lg) {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    &:not(:last-child) {
+      margin-right: 66px;
+
+      @include r($lg) {
+        margin: 0 0 30px;
+      }
+    }
+
+  
 
     &--delivery::before,
     &--return::before,
@@ -660,6 +807,20 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
     margin-bottom: 48px;
+
+    @include r($xl) { 
+      grid-gap: 20px;
+    }
+
+    @include r($lg) { 
+      grid-gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @include r($md) { 
+      grid-gap: 5px;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__item {
@@ -684,6 +845,11 @@
     padding-top: 9px;
     z-index: 1;
 
+    @include r($sm) {
+      width: 36px;
+      height: 36px;
+    }
+
     &:hover svg {
       fill: $yellow-900;
     }
@@ -707,6 +873,11 @@
     height: 29px;
     fill: $silver-600;
     transition: fill 0.5s ease-in-out;
+
+    @include r($lg) {
+      width: 24px;
+      height: 22px;
+    }
   }
 
   &__product {
@@ -715,33 +886,37 @@
   }
 
   &__link {
-    display: block;
     position: relative;
-    margin-bottom: 10px;
-    max-width: 298px;
-    height: 293px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+    max-width: 100%;
+    height: 215px;
+
+    @include r($sm) {
+      height: 120px;
+    }
 
     &::after,
     &::before {
-      content: '';
-      position: absolute;
+      content: ''; 
+      position: absolute;   
       transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
     }
 
-    &::after {
+    &::after {      
       background-color: rgba($black, 0);
       top: 0;
       right: 0;
       left: 0;
-      bottom: 80px;
+      bottom: 0;
     }
 
-    &::before {
+    &::before {     
       background-image: url('../images/svg/icon-search-product.svg');
       @extend %bg;
       top: 50%;
-      right: 125px;
-      transform: translateY(-60px);
+      transform: translateY(-50%);
       z-index: 1;
       width: 48px;
       height: 48px;
@@ -760,7 +935,20 @@
   }
 
   &__img {
-    margin-bottom: 18px;
+    object-fit: contain;
+    max-width: 100%;
+
+    @include r($sm) {
+      height: 120px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 10px;
+
+    @include r($sm) {
+      margin-bottom: 5px;
+    }
   }
 
   &__text {
@@ -769,7 +957,6 @@
     font-weight: 600;
     color: $dark-900;
     height: 60px;
-    padding: 0 18px;
 
     @include line-clamp(14, 1.4, 3)
   }
@@ -780,6 +967,10 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 0 18px;
+
+    @include r($sm) {
+      padding: 0 12px;
+    }
   }
 
   &__cart {
@@ -793,8 +984,6 @@
     height: 16px;
     fill: $white;
   }
-
-
 
   &__price {
     letter-spacing: 0.03em;
@@ -832,13 +1021,20 @@
       box-shadow: inset 0 10px 4px rgba($black, 0.1), 0 0 0 4px rgba(99, 166, 14, 0);
     }
   }
-
 }
 
 .filter {
   display: flex;
   justify-content: center;
   margin-bottom: 48px;
+
+  @include r($lg) {
+    margin-bottom: 9px;
+  }
+
+  @include r($sm) {
+    flex-wrap: wrap;
+  }
 
   &__button:not(:last-child) {
     margin-right: 24px;
@@ -852,6 +1048,11 @@
     text-transform: uppercase;
     border-bottom: 3px solid transparent;
     transition: color 0.5s ease-in-out, border-bottom 0.3s ease-in-out;
+
+    @include r($lg) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
 
     &:hover {
       color: $green-900;

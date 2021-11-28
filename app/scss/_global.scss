@@ -44,6 +44,10 @@ img {
   border-radius: 4px;
   transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
 
+  @include r($sm) {
+    font-size: 14px;
+  }
+
   &--cart {
     width: 32px;
     height: 32px;
@@ -87,6 +91,10 @@ img {
 .section {
   padding: 72px 0;
   text-align: center;
+
+  @include r($lg) {
+    padding: 48px 0;
+  }
 }
 
 .title {
@@ -97,6 +105,11 @@ img {
   text-transform: uppercase;
   margin-bottom: 30px;
   letter-spacing: 0.03em;
+
+  @include r($lg) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 

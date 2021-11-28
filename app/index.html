@@ -19,12 +19,35 @@
         <div class="container">
           <div class="header__inner">
 
-            <button class="header__menu-btn">
-              <span class="sr-only">Открыть меню</span>
-              <svg class="header__btn-icon">
-                <use xlink:href="images/sprite.svg#icon-burger"></use>
-              </svg>
-            </button>
+            <div class="header__burger">
+              <button class="header__menu-btn">
+                <span class="sr-only">Открыть меню</span>
+                <svg class="header__btn-icon">
+                  <use xlink:href="images/sprite.svg#icon-burger"></use>
+                </svg>
+              </button>
+
+              <div class="header__burger-list">
+                <div class="header__burger-wrapper">
+                  <div class="header__burger-inner">
+
+                    <a class="logo" href="#">
+                      <img class="logo__img logo__img-burger" src="images/svg/icon-logo-green.svg" width="200" height="60" alt="Логотип">
+                    </a>
+
+                    <button class="header__btn-close">
+                      
+                        <span class="sr-only">Корзина</span>
+                        <svg class="header__close-icon">
+                          <use xlink:href="images/sprite.svg#icon-btn-close"></use>
+                        </svg>
+                     
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <ul class="header__list">
 
@@ -143,12 +166,12 @@
 
               <button class="header__btn-menu">
                 <span class="sr-only">Поиск</span>
-                  <svg class="header__form-icon">
-                    <use xlink:href="images/sprite.svg#icon-search"></use>
-                  </svg>
+                <svg class="header__form-icon">
+                  <use xlink:href="images/sprite.svg#icon-search"></use>
+                </svg>
               </button>
 
-          
+
               <form class="form-search" action="#">
                 <label class="sr-only" for="search">Поиск</label>
                 <input class="form-search__input" type="search" id="search" name="search"
@@ -199,11 +222,11 @@
 
 
 
-   <main class="main">
+  <main class="main">
 
     <h1 class="sr-only">Онлан маркет продуктов питания</h1>
 
-   
+
 
     <section class="slider-top">
 
@@ -212,60 +235,54 @@
       <ul class="slider-top__inner">
 
         <li class="slider-top__item" style="background-image: url('images/slider/vegetables.jpg')">
-          <div class="container">
-            <div class="slider-top__item">
-              <div class="slider-top__offer">
-                <h3 class="slider-top__title">
-                  свежачок вам в хату
-                  <span class="slider-top__subtitle">
-                    Скидка -50%
-                  </span>
-                </h3>
-                <div class="slider-top__text">
-                  <p>
-                    Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
-                  </p>
-                </div>
-                <a class="button" href="#">Купить сейчас</a>
+          <div class="slider-top__container">
+            <div class="slider-top__offer">
+              <h3 class="slider-top__title">
+                свежачок вам в хату
+                <span class="slider-top__subtitle">
+                  Скидка -50%
+                </span>
+              </h3>
+              <div class="slider-top__text">
+                <p>
+                  Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
+                </p>
               </div>
+              <a class="button" href="#">Купить сейчас</a>
             </div>
           </div>
         </li>
 
-        <li class="slider-top-item" style="background-image: url('images/slider/tomato.jpg')">
-          <div class="container">
-            <div class="slider-top__item">
-              <div class="slider-top__offer">
-                <h3 class="slider-top__title">
-                  накрути себе томатов
-                  <span class="slider-top__subtitle">
-                    акция: 3 кг по цене 1
-                  </span>
-                </h3>
-                <div class="slider-top__text">
-                  <p>
-                    Только с 12 по 15 июля скидка на домашние помидорчики
-                  </p>
-                </div>
-                <a class="button" href="#">Купить сейчас</a>
+        <li class="slider-top__item" style="background-image: url('images/slider/tomato.jpg')">
+          <div class="slider-top__container">
+            <div class="slider-top__offer">
+              <h3 class="slider-top__title">
+                накрути себе томатов
+                <span class="slider-top__subtitle">
+                  акция: 3 кг по цене 1
+                </span>
+              </h3>
+              <div class="slider-top__text">
+                <p>
+                  Только с 12 по 15 июля скидка на домашние помидорчики
+                </p>
               </div>
+              <a class="button" href="#">Купить сейчас</a>
             </div>
           </div>
         </li>
 
         <li class="slider-top__item" style="background-image: url('images/slider/greens.jpg')">
-          <div class="container">
-            <div class="slider-top__item">
-              <div class="slider-top__offer">
-                <h3 class="slider-top__title">
-                  Пусть остальные
-                  позеленеют от зависти
-                  <span class="slider-top__subtitle">
-                    Распродажа зелени
-                  </span>
-                </h3>
-                <a class="button" href="#">Купить сейчас</a>
-              </div>
+          <div class="slider-top__container">
+            <div class="slider-top__offer">
+              <h3 class="slider-top__title">
+                Пусть остальные
+                позеленеют от зависти
+                <span class="slider-top__subtitle">
+                  Распродажа зелени
+                </span>
+              </h3>
+              <a class="button" href="#">Купить сейчас</a>
             </div>
           </div>
         </li>
@@ -273,7 +290,7 @@
 
     </section>
 
-   
+
 
     <section class="advantages">
       <div class="container">
@@ -313,7 +330,7 @@
       </div>
     </section>
 
-    
+
 
     <section class="top-product section">
       <div class="container">
@@ -363,17 +380,16 @@
                 </button>
 
                 <a class="top-product__link" href="#">
-
                   <img class="top-product__img" src="images/catalog/pineapple.png" width="298" height="215"
                     alt="Ананас">
-
-                  <h3 class="top-product__text">
-                    Ананас, 1кг
-                  </h3>
-
                 </a>
 
                 <div class="top-product__info">
+                  <a class="top-product__heading" href="#">
+                    <h3 class="top-product__text">
+                      Ананас, 1кг
+                    </h3>
+                  </a>
                   <div class="top-product__cart">
                     <span class="top-product__price top-product__price--old">1999 <span>₽</span></span>
                     <span class="top-product__price">999 <span>₽</span></span>
@@ -402,17 +418,15 @@
                 </button>
 
                 <a class="top-product__link" href="#">
-
                   <img class="top-product__img" src="images/catalog/lemon.png" width="298" height="215" alt="Лимон">
-
-                  <h3 class="top-product__text">
-                    Лимон, 1кг
-                  </h3>
-
                 </a>
 
                 <div class="top-product__info">
-
+                  <a class="top-product__heading" href="#">
+                    <h3 class="top-product__text">
+                      Лимон, 1кг
+                    </h3>
+                  </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">199 <span>₽</span></span>
                     <button class="button button--cart" type="button">
@@ -444,16 +458,16 @@
                 </button>
 
                 <a class="top-product__link" href="#">
-
                   <img class="top-product__img" src="images/catalog/pitahaya.png" width="298" height="215"
                     alt="Питахайя">
-
-                  <h3 class="top-product__text">
-                    Питахайя красная с белой мякотью, 1шт
-                  </h3>
-
                 </a>
+
                 <div class="top-product__info">
+                  <a class="top-product__heading" href="#">
+                    <h3 class="top-product__text">
+                      Питахайя красная с белой мякотью, 1шт
+                    </h3>
+                  </a>                  
                   <div class="top-product__cart">
                     <span class="top-product__price">1019 <span>₽</span></span>
                     <button class="button button--cart" type="button">
@@ -481,16 +495,15 @@
                 </button>
 
                 <a class="top-product__link" href="#">
-
                   <img class="top-product__img" src="images/catalog/ketchup.png" width="298" height="215" alt="Кетчуп">
-
-                  <h3 class="top-product__text">
-                    Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
-                  </h3>
-
                 </a>
 
                 <div class="top-product__info">
+                  <a class="top-product__heading" href="#">
+                    <h3 class="top-product__text">
+                      Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
+                    </h3>
+                  </a> 
                   <div class="top-product__cart">
                     <span class="top-product__price">600 <span>₽</span></span>
                     <button class="button button--cart" type="button">
@@ -520,17 +533,15 @@
                 </button>
 
                 <a class="top-product__link" href="#">
-
                   <img class="top-product__img" src="images/catalog/carrot.png" width="298" height="215" alt="Морковь">
-
-                  <h3 class="top-product__text">
-                    Морковь молодая с бабушкиной грядки, 1кг
-                  </h3>
-
                 </a>
 
                 <div class="top-product__info">
-
+                  <a class="top-product__heading" href="#">
+                    <h3 class="top-product__text">
+                      Морковь молодая с бабушкиной грядки, 1кг
+                    </h3>
+                  </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">49 <span>₽</span></span>
                     <button class="button button--cart" type="button">
@@ -562,17 +573,15 @@
                 </button>
 
                 <a class="top-product__link" href="#">
-
                   <img class="top-product__img" src="images/catalog/drink.png" width="298" height="215" alt="Напиток">
-
-                  <h3 class="top-product__text">
-                    Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...
-                  </h3>
-
                 </a>
 
                 <div class="top-product__info">
-
+                  <a class="top-product__heading" href="#">
+                    <h3 class="top-product__text">
+                      Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...
+                    </h3>
+                  </a>
                   <div class="top-product__cart">
                     <div class="top-product__price top-product__price--old">299 <span></span> ₽</div>
                     <span class="top-product__price">199 <span>₽</span></span>
@@ -605,16 +614,15 @@
                 </button>
 
                 <a class="top-product__link" href="#">
-
                   <img class="top-product__img" src="images/catalog/coffee.png" width="298" height="215" alt="Кофе">
-
-                  <h3 class="top-product__text">
-                    Кофе с коноплей органический Caffé Salomoni 250г
-                  </h3>
-
                 </a>
 
                 <div class="top-product__info">
+                  <a class="top-product__heading" href="#">
+                    <h3 class="top-product__text">
+                      Кофе с коноплей органический Caffé Salomoni 250г
+                    </h3>
+                  </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">877 <span>₽</span></span>
                     <button class="button button--cart" type="button">
@@ -646,18 +654,16 @@
                 </button>
 
                 <a class="top-product__link" href="#">
-
                   <img class="top-product__img" src="images/catalog/pepper.png" width="298" height="215"
                     alt="Сладкий перец">
-
-                  <h3 class="top-product__text">
-                    Перец оранжевый, 1кг
-                  </h3>
-
                 </a>
 
                 <div class="top-product__info">
-
+                  <a class="top-product__heading" href="#">
+                    <h3 class="top-product__text">
+                      Перец оранжевый, 1кг
+                    </h3>
+                  </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">349 <span>₽</span></span>
                     <button class="button button--cart" type="button">
@@ -683,7 +689,7 @@
 
     </section>
 
-   
+
 
     <section class="advertising">
       <h2 class="sr-only">Специальные предложения</h2>
@@ -1340,13 +1346,13 @@
           </ul>
 
         </div>
-      </div>z
+      </div>
     </div>
   </footer>
 
 
 
-  <script src="js/main.min.js"></script>
+    <script src="js/main.min.js"></script>
 </body>
 
 </html>
