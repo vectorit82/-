@@ -20,6 +20,7 @@
           <div class="header__inner">
 
             <div class="header__burger">
+
               <button class="header__menu-btn">
                 <span class="sr-only">Открыть меню</span>
                 <svg class="header__btn-icon">
@@ -29,194 +30,312 @@
 
               <div class="header__burger-list">
                 <div class="header__burger-wrapper">
+
                   <div class="header__burger-inner">
 
                     <a class="logo" href="#">
-                      <img class="logo__img logo__img-burger" src="images/svg/icon-logo-green.svg" width="200" height="60" alt="Логотип">
+                      <img class="logo__img logo__img-burger" src="images/svg/icon-logo-green.svg" width="200"
+                        height="60" alt="Логотип">
                     </a>
 
-                    <button class="header__btn-close">
-                      
-                        <span class="sr-only">Корзина</span>
-                        <svg class="header__close-icon">
-                          <use xlink:href="images/sprite.svg#icon-btn-close"></use>
-                        </svg>
-                     
+                    <button class="header__btn-close" type="button">
+
+                      <span class="sr-only">Закрыть меню</span>
+
+                      <svg class="header__close-icon">
+                        <use xlink:href="images/sprite.svg#icon-close-btn"></use>
+                      </svg>
+
                     </button>
 
                   </div>
+
+                  <div class="header__registration">
+
+                    <button class="user-nav__link" type="button">
+                      <span class="sr-only">Личный кабинет</span>
+                      <svg class="user-nav__icon">
+                        <use xlink:href="images/sprite.svg#icon-user"></use>
+                      </svg>
+                    </button>
+
+                    <button class="header__registration-btn" type="button">Вход</button>
+
+                    <span class="header__line"></span>
+
+                    <button class="header__registration-btn" type="button">Регистрация</button>
+
+                  </div>
+
+                  <button class="header__catalog header__catalog--burger" type="button">Каталог продуктов</button>
+
+                  <div class="contacts contacts__header">
+
+                    <ul class="contacts__links contacts__links--header">
+
+                      <li class="contacts__item contacts__item--contact-header">
+                        <a class="contacts__link contacts__link--header" href="tel:+7907288365">
+                          <svg class="contacts__icon-tel">
+                            <use xlink:href="images/sprite.svg#icon-tel"></use>
+                          </svg>
+                          +7 907 288 365
+                        </a>
+                      </li>
+
+                      <li class="contacts__item contacts__item--contact-header">
+                        <a class="contacts__link contacts__link--header" href="#">
+                          <svg class="contacts__icon-map">
+                            <use xlink:href="images/sprite.svg#icon-map"></use>
+                          </svg>
+                          Санкт-Петербург, ул. Ленина, 1
+                        </a>
+                      </li>
+
+                    </ul>
+
+                    <ul class="social">
+
+                      <li class="social__item">
+                        <span class="sr-only">Написать в Фейсбук</span>
+                        <a class="social__link" href="#">
+                          <svg class="social__icon social__icon--header">
+                            <use xlink:href="images/sprite.svg#icon-facebook"></use>
+                          </svg>
+                        </a>
+                      </li>
+
+                      <li class="social__item">
+                        <span class="sr-only">Перейти в Ютуб</span>
+                        <a class="social__link" href="#">
+                          <svg class="social__icon social__icon--header">
+                            <use xlink:href="images/sprite.svg#icon-youtube"></use>
+                          </svg>
+                        </a>
+                      </li>
+
+                      <li class="social__item">
+                        <span class="sr-only">Написать в Телеграм</span>
+                        <a class="social__link" href="#">
+                          <svg class="social__icon social__icon--header">
+                            <use xlink:href="images/sprite.svg#icon-telegram"></use>
+                          </svg>
+                        </a>
+                      </li>
+
+                      <li class="social__item">
+                        <span class="sr-only">Написать в Инстаграмм</span>
+                        <a class="social__link" href="#">
+                          <svg class="social__icon social__icon--header">
+                            <use xlink:href="images/sprite.svg#icon-instagram"></use>
+                          </svg>
+                        </a>
+                      </li>
+
+                    </ul>
+
+                  </div>
+
+                  <ul class="header__burger-links">
+
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Доставка</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">О нас</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Новости</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Контакты</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Акции</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Вакансии</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Отзывы</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Публичная оферта</a>
+                    </li>
+
+                  </ul>
+
                 </div>
               </div>
             </div>
+            
+              <ul class="header__list">
 
-            <ul class="header__list">
-
-              <li class="header__item">
-                <a class="header__link header__link--adress" href="#">
-                  <svg class="header__link-icon">
-                    <use xlink:href="images/sprite.svg#icon-del-address"></use>
-                  </svg>
-                  <span class="header__link-text">адрес и место доставки</span>
-                </a>
-              </li>
-
-              <li class="header__item">
-                <a class="header__link header__link--tel" href="#">
-                  <svg class="header__link-icon">
-                    <use xlink:href="images/sprite.svg#icon-tel"></use>
-                  </svg>
-                  <span class="header__link-text">горячая линия 24/7</span>
-                </a>
-              </li>
-
-            </ul>
-
-            <ul class="header__list header__list--right">
-
-              <li class="header__item">
-                <a class="header__link" href="#">
-                  доставка
-                </a>
-              </li>
-
-              <li class="header__item">
-                <a class="header__link" href="#">
-                  о нас
-                </a>
-              </li>
-
-              <li class="header__item">
-                <a class="header__link" href="#">
-                  новости
-                </a>
-              </li>
-
-            </ul>
-
-          </div>
-        </div>
-      </div>
-      <div class="header__bottom">
-        <div class="container">
-          <div class="header__wrapper">
-
-            <a class="logo" href="#">
-              <img class="logo__img" src="images/svg/icon-logo.svg" width="200" height="60" alt="Логотип">
-              <img class="logo__mini" src="images/svg/icon-logo-mini.svg" alt="">
-            </a>
-
-            <div class="header__catalog-menu" data-uk-dropdown>
-              <button class="header__catalog" type="button">Каталог продуктов</button>
-
-              <ul class="header__catalog-list uk-dropdown">
-
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Овощи и фрукты</a>
+                <li class="header__item">
+                  <a class="header__link header__link--adress" href="#">
+                    <svg class="header__link-icon">
+                      <use xlink:href="images/sprite.svg#icon-del-address"></use>
+                    </svg>
+                    <span class="header__link-text">адрес и место доставки</span>
+                  </a>
                 </li>
 
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Бакалея</a>
+                <li class="header__item">
+                  <a class="header__link header__link--tel" href="#">
+                    <svg class="header__link-icon">
+                      <use xlink:href="images/sprite.svg#icon-tel"></use>
+                    </svg>
+                    <span class="header__link-text">горячая линия 24/7</span>
+                  </a>
                 </li>
 
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Молочные продукты</a>
+              </ul>
+
+              <ul class="header__list header__list--right">
+
+                <li class="header__item">
+                  <a class="header__link" href="#">
+                    доставка
+                  </a>
                 </li>
 
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Хлеб</a>
+                <li class="header__item">
+                  <a class="header__link" href="#">
+                    о нас
+                  </a>
                 </li>
 
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Мясо</a>
-                </li>
-
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Колбаса</a>
-                </li>
-
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Рыба</a>
-                </li>
-
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Алкоголь</a>
-                </li>
-
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Напитки</a>
-                </li>
-
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Торты</a>
-                </li>
-
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Мясо</a>
-                </li>
-
-                <li class="header__catalog-item">
-                  <a class="header__catalog-link" href="#">Чай, кофе</a>
+                <li class="header__item">
+                  <a class="header__link" href="#">
+                    новости
+                  </a>
                 </li>
 
               </ul>
 
             </div>
-
-            <div class="header__form-menu">
-
-              <button class="header__btn-menu">
-                <span class="sr-only">Поиск</span>
-                <svg class="header__form-icon">
-                  <use xlink:href="images/sprite.svg#icon-search"></use>
-                </svg>
-              </button>
-
-
-              <form class="form-search" action="#">
-                <label class="sr-only" for="search">Поиск</label>
-                <input class="form-search__input" type="search" id="search" name="search"
-                  placeholder="Найти в магазине ..." required>
-                <button class="form-search__btn" type="submit">поиск</button>
-              </form>
-
-            </div>
-
-            <ul class="user-nav">
-
-              <li class="user-nav__item">
-                <button class="user-nav__link" type="button">
-                  <span class="sr-only">Личный кабинет</span>
-                  <svg class="user-nav__icon">
-                    <use xlink:href="images/sprite.svg#icon-user"></use>
-                  </svg>
-                </button>
-              </li>
-
-              <li class="user-nav__item">
-                <span class="user-nav__num">12</span>
-                <button class="user-nav__link" type="button">
-                  <span class="sr-only">Понравившиеся товары</span>
-                  <svg class="user-nav__icon">
-                    <use xlink:href="images/sprite.svg#icon-heart"></use>
-                  </svg>
-                </button>
-              </li>
-
-              <li class="user-nav__item">
-                <span class="user-nav__num">12</span>
-                <button class="user-nav__link" type="button">
-                  <span class="sr-only">Выбранные товары</span>
-                  <svg class="user-nav__icon">
-                    <use xlink:href="images/sprite.svg#icon-cart"></use>
-                  </svg>
-                </button>
-              </li>
-
-            </ul>
-
           </div>
         </div>
-      </div>
+        <div class="header__bottom">
+          <div class="container">
+            <div class="header__wrapper">
+
+              <a class="logo" href="#">
+                <img class="logo__img" src="images/svg/icon-logo.svg" width="200" height="60" alt="Логотип">
+                <img class="logo__mini" src="images/svg/icon-logo-mini.svg" alt="">
+              </a>
+
+              <div class="header__catalog-menu" data-uk-dropdown>
+                <button class="header__catalog" type="button">Каталог продуктов</button>
+
+                <ul class="header__catalog-list uk-dropdown">
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Овощи и фрукты</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Бакалея</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Молочные продукты</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Хлеб</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Мясо</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Колбаса</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Рыба</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Алкоголь</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Напитки</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Торты</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Мясо</a>
+                  </li>
+
+                  <li class="header__catalog-item">
+                    <a class="header__catalog-link" href="#">Чай, кофе</a>
+                  </li>
+
+                </ul>
+
+              </div>
+
+              <div class="header__form-menu">
+
+                <button class="header__btn-menu">
+                  <span class="sr-only">Поиск</span>
+                  <svg class="header__form-icon">
+                    <use xlink:href="images/sprite.svg#icon-search"></use>
+                  </svg>
+                </button>
+
+
+                <form class="form-search" action="#">
+                  <label class="sr-only" for="search">Поиск</label>
+                  <input class="form-search__input" type="search" id="search" name="search"
+                    placeholder="Найти в магазине ..." required>
+                  <button class="form-search__btn" type="submit">поиск</button>
+                </form>
+
+              </div>
+
+              <ul class="user-nav">
+
+                <li class="user-nav__item">
+                  <button class="user-nav__link" type="button">
+                    <span class="sr-only">Личный кабинет</span>
+                    <svg class="user-nav__icon">
+                      <use xlink:href="images/sprite.svg#icon-user"></use>
+                    </svg>
+                  </button>
+                </li>
+
+                <li class="user-nav__item">
+                  <span class="user-nav__num">12</span>
+                  <button class="user-nav__link" type="button">
+                    <span class="sr-only">Понравившиеся товары</span>
+                    <svg class="user-nav__icon">
+                      <use xlink:href="images/sprite.svg#icon-heart"></use>
+                    </svg>
+                  </button>
+                </li>
+
+                <li class="user-nav__item">
+                  <span class="user-nav__num">12</span>
+                  <button class="user-nav__link" type="button">
+                    <span class="sr-only">Выбранные товары</span>
+                    <svg class="user-nav__icon">
+                      <use xlink:href="images/sprite.svg#icon-cart"></use>
+                    </svg>
+                  </button>
+                </li>
+
+              </ul>
+
+            </div>
+          </div>
+        </div>
     </nav>
   </header>
 
@@ -467,7 +586,7 @@
                     <h3 class="top-product__text">
                       Питахайя красная с белой мякотью, 1шт
                     </h3>
-                  </a>                  
+                  </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">1019 <span>₽</span></span>
                     <button class="button button--cart" type="button">
@@ -503,7 +622,7 @@
                     <h3 class="top-product__text">
                       Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
                     </h3>
-                  </a> 
+                  </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">600 <span>₽</span></span>
                     <button class="button button--cart" type="button">
@@ -741,7 +860,7 @@
       </div>
     </section>
 
-  
+
 
     <section class="action section">
       <div class="container">
@@ -1030,7 +1149,7 @@
       </div>
     </section>
 
-   
+
 
     <section class="partners section">
 
@@ -1123,7 +1242,7 @@
       </div>
     </section>
 
-   
+
 
     <section class="news">
       <div class="container">
@@ -1201,7 +1320,7 @@
 
   </main>
 
- 
+
 
   <footer class="footer">
     <div class="container">
@@ -1257,18 +1376,18 @@
 
         </ul>
 
-        <div class="footer__contacts">
+        <div class="contacts">
 
-          <ul class="footer__contacts-links">
+          <ul class="contacts__links">
 
-            <li class="footer__contacts-item footer__item--contact">
-              <a class="footer__link" href="tel:+7907288365">
+            <li class="contacts__item contacts__item--contact">
+              <a class="contacts__link" href="tel:+7907288365">
                 Горячая линия+7 907 288 365
               </a>
             </li>
 
-            <li class="footer__contacts-item footer__item--contact">
-              <a class="footer__link" href="#">
+            <li class="contacts__item contacts__item--contact">
+              <a class="contacts__link" href="#">
                 Санкт-Петербург, ул. Ленина, 1
               </a>
             </li>
@@ -1352,7 +1471,7 @@
 
 
 
-    <script src="js/main.min.js"></script>
+  <script src="js/main.min.js"></script>
 </body>
 
 </html>

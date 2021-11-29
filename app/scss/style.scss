@@ -24,12 +24,26 @@
     font-weight: 700;
   }
 
+// BURGER OPEN
+
   &__burger {
     display: none;
 
     @include r($lg) {
       display: block;
     }
+  }
+  
+  &__menu-btn {
+    position: relative;
+    z-index: 10;
+    margin-left: 5px;
+  }
+
+  &__btn-icon {
+    stroke: $white;
+    width: 30px;
+    height: 20px;
   }
 
   &__burger-list {
@@ -44,37 +58,96 @@
 
   &__burger-wrapper {
     position: relative;
-    max-width: 80%;
+    max-width: 300px;
     width: 100%;
     background-color: $white;
     z-index: 21;
+    border: 1px solid $silver;
   }
 
   &__burger-inner {
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     z-index: 22;
+    padding: 26px 15px 26px 15px;
+    background-color: $white;
+  }
+
+  &__btn-close {   
+    padding: 11px;
+    object-fit: contain;
+    border-radius: 3px;
+    transition: fill 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+    &:hover {
+      fill: $green-900;
+      background-color: $green-100;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+    }
+
+    &:active {
+      fill: $silver-600;
+      box-shadow: none;
+    }
   }
 
   &__close-icon {
-    position: relative;
+    @extend %bg;
     width: 18px;
     height: 18px;
-    z-index: 600;
   }
 
-  &__menu-btn {
-    position: relative;
-    z-index: 10;
-    margin-left: 5px;
+  &__registration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    background-color: $green-900;
+    padding: 4px 58px 4px 5px;
   }
 
-  &__btn-icon {
-    stroke: $white;
-    width: 30px;
+  &__registration-btn {
+    font-size: 18px;
+    color: $white;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  &__line {
+    width: 1px;
     height: 20px;
+    background-color: $white;
   }
+
+  &__contacts-link {
+    padding-left: 32px;
+    color: $black;
+  }
+
+  &__burger-links {
+    padding: 24px 15px;
+  }
+
+  &__burger-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &__burger-link {
+    color: $dark-800;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: none;
+  }
+
+  // BURGER CLOSE
 
   &__list {
     display: flex;
@@ -208,14 +281,32 @@
     z-index: 10;
     transition: background-color 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 
+    @include r($lg) {
+      border-bottom: 1px solid rgba(193, 193, 193, 0.3);
+    }
+
+    &--burger {
+      font-size: 18px;
+      line-height: 1;
+      padding: 15px 38px 15px 39px;
+      color: $dark-800;
+    }
+
     &::before {
       content: '';
       background-image: url('../images/svg/icon-nav.svg');
       position: absolute;
       width: 25px;
       height: 17px;
-      left: 17px;
-      bottom: 14px;
+      left: 18px;
+      bottom: 16px;
+
+      @include r($lg) {
+        background-image: url('../images/svg/icon-nav-silver.svg');
+        height: 19px;
+        left: 16px;
+        bottom: 15px;
+      }
     }
 
     &::after {
@@ -227,11 +318,20 @@
       right: 19px;
       bottom: 22px;
       transition: transform 0.5s ease-in-out;
+
+      @include r($lg) {
+        opacity: 0;
+      }
     }
 
     &:hover {
       background-color: $green-200;
       border-radius: 6px 6px 0 0;
+
+      @include r($lg) {
+        background-color: $white;
+        border-radius: 0;
+      }
 
 
       &::after {
@@ -267,7 +367,6 @@
 
   &__catalog-link {
     display: block;
-
     padding: 15px 24px;
     border-top: 0.5px solid $silver;
     border-bottom: 0.5px solid $silver;
@@ -584,7 +683,6 @@
     }
 
     @include r($md) {
-
       max-width: 65%;
     }
 
@@ -1073,10 +1171,6 @@
 
 }
 
-.mixitup-control-active {
-  border-bottom: 3px solid $green-200;
-}
-
 .badges {
   width: 66px;
   position: absolute;
@@ -1112,6 +1206,10 @@
       background-color: $orange-900;
     }
   }
+}
+
+.mixitup-control-active {
+  border-bottom: 3px solid $green-200;
 }
 
 // ADVERTISING// ADVERTISING// ADVERTISING// ADVERTISING
@@ -1482,8 +1580,72 @@
     display: block;
     transition: opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
 
-    &:not(:last-child) {
-      margin-bottom: 18px;
+    &:hover {
+      opacity: 0.7;
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px #EFF6E7;
+      border-radius: 3px;
+    }
+
+    &:active {
+      color: $green-200;
+      box-shadow: none;
+    }
+  }
+
+
+
+  &__item {
+    margin-bottom: 18px;
+
+    &--contact {
+      margin: 0 0 18px 0;
+    }
+  }
+
+  &__bottom {
+    padding: 24px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.contacts {
+  display: block;
+
+  &__header {
+    padding: 24px 0 24px 15px;
+    border-bottom: 1px solid rgba(193, 193, 193, 0.3);
+    text-transform: none;
+  }
+
+  &__item {
+    margin-bottom: 18px;
+
+    &--contact {
+      margin: 0 0 18px 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    transition: opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+
+    &--header {
+      position: relative;
+      color: $dark-800;
+      padding-left: 39px;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 15px;
     }
 
     &:hover {
@@ -1502,31 +1664,21 @@
     }
   }
 
-  &__item {
-    margin-bottom: 18px;
-
-    &--contact {
-      margin: 0 0 18px 0;
-    }
+  &__icon-tel,
+  &__icon-map {
+    position: absolute;
+    fill: $dark-800;
+    width: 24px;    
+    left: 0;
   }
 
-  &__contact:not(:last-child) {
-    margin-bottom: 18px;
+  &__icon-tel {
+    height: 24px;
   }
 
-  &__contacts {
-    display: block;
-  }
-
-  &__bottom {
-    padding: 24px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  &__bottom-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &__icon-map {
+    height: 33px;
+    top: 7px;
   }
 }
 
@@ -1564,6 +1716,10 @@
     width: 32px;
     height: 32px;
     fill: $white;
+
+    &--header {
+      fill: $dark-800;
+    }
   }
 }
 
