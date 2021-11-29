@@ -21,8 +21,16 @@ $(function () {
   //   readOnly: true
   // });
 
-  $('.header__catalog').on('click', function () {
-    $('.header__catalog, .header__catalog-list').toggleClass('header__catalog--active');
+  $('.header__catalog, .header__menu-btn, .header__burger-list').on('click', function () {
+    $('.header__catalog, .header__catalog-list, .header__burger-list, .header__burger-wrapper, header__form-inner--mobile').toggleClass('btn--active');
+  });
+  
+  $(".header__btn-close").on("click", function() {
+    $(this).parent().removeClass("btn--active")
+  })
+
+  $('.header__btn-search').on('click', function () {
+    $('.header__form-inner--mobile').toggleClass('search--active');
   });
 
 

@@ -54,6 +54,15 @@
     bottom: 0;
     background-color: rgba($black, 0.15);
     z-index: 20;
+    display: none;
+
+    &.btn--active {
+      display: block;
+    }
+
+    &.close--active {
+      display: none;
+    }
   }
 
   &__burger-wrapper {
@@ -63,6 +72,13 @@
     background-color: $white;
     z-index: 21;
     border: 1px solid $silver;
+    transform: translateX(-200%);
+    
+
+    &.btn--active {
+      transform: translateX(0);
+      transition: transform 0.5s ease-in-out;
+    }
   }
 
   &__burger-inner {
@@ -139,12 +155,18 @@
   }
 
   &__burger-link {
+    display: block;
     color: $dark-800;
     font-size: 18px;
     font-weight: 400;
     letter-spacing: 0.03em;
     line-height: 1.2;
     text-transform: none;
+    transition: color 0.5s ease-in-out;
+
+    &:hover {
+      color:$green-900;
+    }
   }
 
   // BURGER CLOSE
@@ -400,13 +422,7 @@
     }
   }
 
-  &__form-icon {
-    width: 24px;
-    height: 24px;
-    fill: $white;
-  }
-
-  &__btn-menu {
+  &__btn-search {
     display: none;
 
     @include r($lg) {
@@ -428,6 +444,38 @@
       &:active {
         opacity: 0.5;
         box-shadow: none;
+      }
+    }
+  }
+
+  &__form-icon {
+    width: 24px;
+    height: 24px;
+    fill: $white;
+  }
+
+  &__form-inner {
+    position: relative;
+
+    @include r($lg) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 120px;
+      transform: translateY(-1000%);
+      z-index: 10;
+
+      @include r($lg) {
+        display: block;
+      }
+
+      &.search--active {
+        transform: translateY(0);
       }
     }
   }
@@ -456,17 +504,12 @@
 }
 
 .form-search {
-  position: relative;
   width: 100%;
   padding-right: 158px;
 
   @include r($xl) {
     max-width: 377px;
     padding-right: 104px;
-  }
-
-  @include r($lg) {
-    display: none;
   }
 
   &::after,
@@ -515,6 +558,12 @@
       letter-spacing: 0.03em;
       color: $dark-800;
     }
+
+    &--mobile {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 0;
+    }
   }
 
   &__btn {
@@ -545,6 +594,15 @@
       color: rgba($white, 0.5);
       box-shadow: none;
     }
+
+    &--mobile {
+      border-radius: 0;
+    }
+  }
+
+  &__mobile {
+    max-width: 100%;
+    width: 100%;
   }
 }
 
