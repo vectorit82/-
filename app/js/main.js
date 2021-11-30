@@ -53,7 +53,26 @@ const swiper = new Swiper('.swiper', {
   // direction: 'horizontal',
   loop: true,
   slidesPerView: 6,
-  spaceBetween: 40
+  spaceBetween: 40,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 5,
+    },
+    575: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    992: {
+      slidesPerView: 4,
+    },
+    1200: {
+      slidesPerView: 6,
+    }
+  },
   // speed: 400,
   //  spaceBetween: 100,
 
