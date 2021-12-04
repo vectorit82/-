@@ -5,16 +5,168 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ФрешОк Онлайн-маркет</title>
-  <link rel="shortcut icon" href="images/favicon/Favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body>
+<body class="body">
+
+
+
   <header class="header">
     <nav class="header__menu">
       <div class="header__top">
         <div class="container">
           <div class="header__inner">
+
+            <div class="header__burger">
+
+              <button class="header__menu-btn">
+                <span class="sr-only">Открыть меню</span>
+                <svg class="header__btn-icon">
+                  <use xlink:href="images/sprite.svg#icon-burger"></use>
+                </svg>
+              </button>
+
+              <div class="header__burger-list">
+                <div class="header__burger-wrapper">
+
+                  <div class="header__burger-inner">
+
+                    <a class="logo" href="#">
+                      <img class="logo__img logo__img-burger" src="images/svg/icon-logo-green.svg" width="200"
+                        height="60" alt="Логотип">
+                    </a>
+
+                    <button class="header__btn-close" type="button">
+
+                      <span class="sr-only">Закрыть меню</span>
+
+                      <svg class="header__close-icon">
+                        <use xlink:href="images/sprite.svg#icon-close-btn"></use>
+                      </svg>
+
+                    </button>
+
+                  </div>
+
+                  <div class="header__registration">
+
+                    <button class="user-nav__link" type="button">
+                      <span class="sr-only">Личный кабинет</span>
+                      <svg class="user-nav__icon">
+                        <use xlink:href="images/sprite.svg#icon-user"></use>
+                      </svg>
+                    </button>
+
+                    <button class="header__registration-btn" type="button">Вход</button>
+
+                    <span class="header__line"></span>
+
+                    <button class="header__registration-btn" type="button">Регистрация</button>
+
+                  </div>
+
+                  <button class="header__catalog header__catalog--burger" type="button">Каталог продуктов</button>
+
+                  <div class="contacts contacts__header">
+
+                    <ul class="contacts__links contacts__links--header">
+
+                      <li class="contacts__item contacts__item--contact-header">
+                        <a class="contacts__link contacts__link--header" href="tel:+7907288365">
+                          <svg class="contacts__icon-tel">
+                            <use xlink:href="images/sprite.svg#icon-tel"></use>
+                          </svg>
+                          +7 907 288 365
+                        </a>
+                      </li>
+
+                      <li class="contacts__item contacts__item--contact-header">
+                        <a class="contacts__link contacts__link--header" href="#">
+                          <svg class="contacts__icon-map">
+                            <use xlink:href="images/sprite.svg#icon-map"></use>
+                          </svg>
+                          Санкт-Петербург, ул. Ленина, 1
+                        </a>
+                      </li>
+
+                    </ul>
+
+                    <ul class="social">
+
+                      <li class="social__item">
+                        <span class="sr-only">Написать в Фейсбук</span>
+                        <a class="social__link" href="#">
+                          <svg class="social__icon social__icon--header">
+                            <use xlink:href="images/sprite.svg#icon-facebook"></use>
+                          </svg>
+                        </a>
+                      </li>
+
+                      <li class="social__item">
+                        <span class="sr-only">Перейти в Ютуб</span>
+                        <a class="social__link" href="#">
+                          <svg class="social__icon social__icon--header">
+                            <use xlink:href="images/sprite.svg#icon-youtube"></use>
+                          </svg>
+                        </a>
+                      </li>
+
+                      <li class="social__item">
+                        <span class="sr-only">Написать в Телеграм</span>
+                        <a class="social__link" href="#">
+                          <svg class="social__icon social__icon--header">
+                            <use xlink:href="images/sprite.svg#icon-telegram"></use>
+                          </svg>
+                        </a>
+                      </li>
+
+                      <li class="social__item">
+                        <span class="sr-only">Написать в Инстаграмм</span>
+                        <a class="social__link" href="#">
+                          <svg class="social__icon social__icon--header">
+                            <use xlink:href="images/sprite.svg#icon-instagram"></use>
+                          </svg>
+                        </a>
+                      </li>
+
+                    </ul>
+
+                  </div>
+
+                  <ul class="header__burger-links">
+
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Доставка</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">О нас</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Новости</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Контакты</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Акции</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Вакансии</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Отзывы</a>
+                    </li>
+                    <li class="header__burger-item">
+                      <a class="header__burger-link" href="#">Публичная оферта</a>
+                    </li>
+
+                  </ul>
+
+                </div>
+              </div>
+            </div>
 
             <ul class="header__list">
 
@@ -23,7 +175,7 @@
                   <svg class="header__link-icon">
                     <use xlink:href="images/sprite.svg#icon-del-address"></use>
                   </svg>
-                  адрес и место доставки
+                  <span class="header__link-text">адрес и место доставки</span>
                 </a>
               </li>
 
@@ -32,13 +184,13 @@
                   <svg class="header__link-icon">
                     <use xlink:href="images/sprite.svg#icon-tel"></use>
                   </svg>
-                  горячая линия 24/7
+                  <span class="header__link-text">горячая линия 24/7</span>
                 </a>
               </li>
 
             </ul>
 
-            <ul class="header__list">
+            <ul class="header__list header__list--right">
 
               <li class="header__item">
                 <a class="header__link" href="#">
@@ -68,13 +220,14 @@
           <div class="header__wrapper">
 
             <a class="logo" href="#">
-              <img class="logo__img" src="images/svg/icon-logo.svg" width="200" height="60" alt="Логотип">
+              <img class="logo__img logo__img--header" src="images/svg/icon-logo.svg" width="200" height="60" alt="Логотип">
+              <img class="logo__mini" src="images/svg/icon-logo-mini.svg" alt="">
             </a>
 
-            <div class="header__catalog-menu">
+            <div class="header__catalog-menu" data-uk-dropdown>
               <button class="header__catalog" type="button">Каталог продуктов</button>
 
-              <ul class="header__catalog-list">
+              <ul class="header__catalog-list uk-dropdown">
 
                 <li class="header__catalog-item">
                   <a class="header__catalog-link" href="#">Овощи и фрукты</a>
@@ -128,12 +281,42 @@
 
             </div>
 
-            <form class="form-search" action="#">
-              <label class="sr-only" for="search">Поиск</label>
-              <input class="form-search__input" type="search" id="search" name="search"
-                placeholder="Найти в магазине ..." required>
-              <button class="form-search__btn" type="submit">поиск</button>
-            </form>
+            <div class="header__form-menu">
+
+              <div class="header__btn-wrapper">
+
+                <button class="header__btn-search">
+                  <span class="sr-only">Поиск</span>
+                  <svg class="header__form-icon">
+                    <use xlink:href="images/sprite.svg#icon-search"></use>
+                  </svg>
+                </button>
+
+                <div class="header__form-inner header__form-inner--mobile">
+
+                  <form class="form-search form-search__mobile" action="#">
+                    <label class="sr-only" for="search">Поиск</label>
+                    <input class="form-search__input form-search__input--mobile" type="search" id="search" name="search"
+                      placeholder="Я ищу..." required>
+                    <button class="form-search__btn form-search__btn--mobile" type="submit">поиск</button>
+                  </form>
+
+                </div>
+
+              </div>
+
+              <div class="header__form-inner">
+
+                <form class="form-search" action="#">
+                  <label class="sr-only" for="search">Поиск</label>
+                  <input class="form-search__input" type="search" id="search" name="search"
+                    placeholder="Найти в магазине ..." required>
+                  <button class="form-search__btn" type="submit">поиск</button>
+                </form>
+
+              </div>
+
+            </div>
 
             <ul class="user-nav">
 
@@ -174,13 +357,17 @@
     </nav>
   </header>
 
+
+
   <main class="main">
 
    
 
   </main>
 
-  <footer class="footer">
+
+
+ <footer class="footer">
     <div class="container">
       <a class="logo footer__logo" href="#">
         <img class="logo__img" src="images/svg/icon-logo.svg" alt="Логотип">
@@ -189,9 +376,10 @@
         <div class="footer__registration">
           <span class="footer__text">Следите за нашими акциями</span>
 
-          <form class="footer__form" action="#">
+          <form class="footer__form" name="email" action="#">
             <label class="sr-only" for="email">Форма регистрации</label>
-            <input class="footer__form-input" id="email" type="email" placeholder="email@email.com" required>
+            <input class="footer__form-input" name="email" id="email" type="email" placeholder="email@email.com"
+              required>
             <button class="footer__form-btn button" type="submit">подписаться</button>
           </form>
 
@@ -233,28 +421,28 @@
 
         </ul>
 
-        <div class="footer__contacts">
+        <div class="contacts contacts__footer">
 
-          <ul class="footer__contacts-links">
+          <ul class="contacts__links">
 
-            <li class="footer__contacts-item footer__item--contact">
-              <a class="footer__link" href="tel:+7907288365">
+            <li class="contacts__item contacts__item--contact">
+              <a class="contacts__link" href="tel:+7907288365">
                 Горячая линия+7 907 288 365
               </a>
             </li>
 
-            <li class="footer__contacts-item footer__item--contact">
-              <a class="footer__link" href="#">
+            <li class="contacts__item contacts__item--contact">
+              <a class="contacts__link" href="#">
                 Санкт-Петербург, ул. Ленина, 1
               </a>
             </li>
 
           </ul>
 
-          <ul class="social">
+          <ul class="social social__footer">
 
             <li class="social__item">
-              <span class="sr-only">Фейсбук</span>
+              <span class="sr-only">Написать в Фейсбук</span>
               <a class="social__link" href="#">
                 <svg class="social__icon">
                   <use xlink:href="images/sprite.svg#icon-facebook"></use>
@@ -263,7 +451,7 @@
             </li>
 
             <li class="social__item">
-              <span class="sr-only">Ютуб</span>
+              <span class="sr-only">Перейти в Ютуб</span>
               <a class="social__link" href="#">
                 <svg class="social__icon">
                   <use xlink:href="images/sprite.svg#icon-youtube"></use>
@@ -272,7 +460,7 @@
             </li>
 
             <li class="social__item">
-              <span class="sr-only">Телеграм</span>
+              <span class="sr-only">Написать в Телеграм</span>
               <a class="social__link" href="#">
                 <svg class="social__icon">
                   <use xlink:href="images/sprite.svg#icon-telegram"></use>
@@ -281,7 +469,7 @@
             </li>
 
             <li class="social__item">
-              <span class="sr-only">Инстаграмм</span>
+              <span class="sr-only">Написать в Инстаграмм</span>
               <a class="social__link" href="#">
                 <svg class="social__icon">
                   <use xlink:href="images/sprite.svg#icon-instagram"></use>

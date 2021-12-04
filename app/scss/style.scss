@@ -24,153 +24,6 @@
     font-weight: 700;
   }
 
-// BURGER OPEN
-
-  &__burger {
-    display: none;
-
-    @include r($lg) {
-      display: block;
-    }
-  }
-  
-  &__menu-btn {
-    position: relative;
-    z-index: 10;
-    margin-left: 5px;
-  }
-
-  &__btn-icon {
-    stroke: $white;
-    width: 30px;
-    height: 20px;
-  }
-
-  &__burger-list {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba($black, 0.15);
-    z-index: 20;
-    display: none;
-
-    &.btn--active {
-      display: block;
-    }
-
-    &.close--active {
-      display: none;
-    }
-  }
-
-  &__burger-wrapper {
-    position: relative;
-    max-width: 300px;
-    width: 100%;
-    background-color: $white;
-    z-index: 21;
-    border: 1px solid $silver;
-    transform: translateX(-200%);
-    
-
-    &.btn--active {
-      transform: translateX(0);
-      transition: transform 0.5s ease-in-out;
-    }
-  }
-
-  &__burger-inner {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 22;
-    padding: 26px 15px 26px 15px;
-    background-color: $white;
-  }
-
-  &__btn-close {   
-    padding: 11px;
-    object-fit: contain;
-    border-radius: 3px;
-    transition: fill 0.5s ease-in-out, background-color 0.5s ease-in-out;
-
-    &:hover {
-      fill: $green-900;
-      background-color: $green-100;
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 3px $green-200;
-    }
-
-    &:active {
-      fill: $silver-600;
-      box-shadow: none;
-    }
-  }
-
-  &__close-icon {
-    @extend %bg;
-    width: 18px;
-    height: 18px;
-  }
-
-  &__registration {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 100%;
-    background-color: $green-900;
-    padding: 4px 58px 4px 5px;
-  }
-
-  &__registration-btn {
-    font-size: 18px;
-    color: $white;
-    letter-spacing: 0.03em;
-    line-height: 1;
-    font-weight: 400;
-  }
-
-  &__line {
-    width: 1px;
-    height: 20px;
-    background-color: $white;
-  }
-
-  &__contacts-link {
-    padding-left: 32px;
-    color: $black;
-  }
-
-  &__burger-links {
-    padding: 24px 15px;
-  }
-
-  &__burger-item:not(:last-child) {
-    margin-bottom: 15px;
-  }
-
-  &__burger-link {
-    display: block;
-    color: $dark-800;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    line-height: 1.2;
-    text-transform: none;
-    transition: color 0.5s ease-in-out;
-
-    &:hover {
-      color:$green-900;
-    }
-  }
-
-  // BURGER CLOSE
-
   &__list {
     display: flex;
 
@@ -284,10 +137,20 @@
     width: 100%;
     position: relative;
 
+    @include r($xxx) {
+      margin-right: 10px;
+    }
+
     @include r($lg) {
       max-width: 100%;
       order: 4;
       display: none;
+
+      &--burger {
+        max-width: 100%;
+        width: 100%;
+        display: block;
+      }
     }
   }
 
@@ -381,6 +244,10 @@
     opacity: 0;
     transition: transform 0.5s ease-in-out;
 
+    &--burger {
+      width: 100%;
+    }
+
     &:hover {
       transform: translateY(0);
       opacity: 1;
@@ -389,6 +256,11 @@
 
   &__catalog-link {
     display: block;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: $black;
+    text-transform: none;
     padding: 15px 24px;
     border-top: 0.5px solid $silver;
     border-bottom: 0.5px solid $silver;
@@ -405,27 +277,17 @@
     max-width: 577px;
     width: 100%;
 
-    @include r($xxx) {
-      max-width: 477px;
-    }
-
-    @include r($xl) {
-      max-width: 327px;
-    }
-
-    @include r($lg) {
-      max-width: 100%;
-      order: 3;
-      width: 50px;
+    @include r($md) {
+      max-width: 50px;
+      width: 100%;
       margin-left: auto;
-      order: 0;
     }
   }
 
   &__btn-search {
     display: none;
 
-    @include r($lg) {
+    @include r($md) {
       display: block;
       position: relative;
       width: 44px;
@@ -456,120 +318,232 @@
 
   &__form-inner {
     position: relative;
+    max-width: 577px;
+    width: 100%;
 
-    @include r($lg) {
-      display: none;
-    }
-
-    &--mobile {
-      display: none;
+    @include r($md) {
       position: absolute;
+      max-width: 100%;
+      top: 120px;
       right: 0;
       left: 0;
-      top: 120px;
-      transform: translateY(-1000%);
+      transform: translateY(-500%);
       z-index: 10;
-
-      @include r($lg) {
-        display: block;
-      }
 
       &.search--active {
         transform: translateY(0);
       }
     }
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      cursor: pointer;
+      transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    &::after {
+      width: 44px;
+      height: 44px;
+      background-color: rgba($white, 0);
+      border-radius: 6px;
+      top: 3px;
+      left: 0;
+    }
+
+    &::before {
+      background-image: url('../images/svg/icon-search.svg');
+      width: 20px;
+      height: 20px;
+      left: 13px;
+      bottom: 14px;
+    }
+
+    &:hover::after {
+      background-color: rgba($white, 0.1);
+    }
+
+    &:active::before {
+      opacity: 0.5;
+    }
   }
 }
 
-.logo {
+.burger {
+  display: none;
 
-  &__img {
-
-    &--header {
-      @include r($lg) {
-        display: none;
-      }
-    }
-  }
-
-  &__img-burger {
+  @include r($lg) {
     display: block;
   }
 
-  &__mini {
+  &__menu-btn {
+    position: relative;
+    z-index: 10;
+    margin-left: 5px;
+  }
+
+  &__btn-icon {
+    stroke: $white;
+    width: 30px;
+    height: 20px;
+  }
+
+  &__list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($black, 0.3);
+    z-index: 20;
     display: none;
 
-    @include r($lg) {
+    &.btn--active {
       display: block;
+    }
+
+    &.close--active {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    background-color: $white;
+    z-index: 21;
+    border: 1px solid $silver;
+    transform: translateX(-200%);
+    transition: transform 0.5s ease-in-out;
+
+
+    &.btn--active {
+      transform: translateX(0);
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 22;
+    padding: 26px 15px 26px 15px;
+    background-color: $white;
+  }
+
+
+  &__btn-close {
+    padding: 11px;
+    object-fit: contain;
+    border-radius: 3px;
+    transition: fill 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+    &:hover {
+      fill: $green-900;
+      background-color: $green-100;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+    }
+
+    &:active {
+      fill: $silver-600;
+      box-shadow: none;
+    }
+  }
+
+  &__close-icon {
+    @extend %bg;
+    width: 18px;
+    height: 18px;
+  }
+
+  &__registration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    background-color: $green-900;
+    padding: 4px 58px 4px 5px;
+  }
+
+  &__registration-btn {
+    font-size: 18px;
+    color: $white;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  &__line {
+    width: 1px;
+    height: 20px;
+    background-color: $white;
+  }
+
+  &__contacts-link {
+    padding-left: 32px;
+    color: $black;
+  }
+
+  &__links {
+    padding: 24px 15px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    display: block;
+    color: $dark-800;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: none;
+    transition: color 0.5s ease-in-out;
+
+    &:hover {
+      color: $green-900;
     }
   }
 }
 
 .form-search {
   width: 100%;
-  padding-right: 158px;
-
-  @include r($xl) {
-    max-width: 377px;
-    padding-right: 104px;
-  }
-
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-    cursor: pointer;
-    transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  }
-
-  &::after {
-    width: 44px;
-    height: 44px;
-    background-color: rgba($white, 0);
-    border-radius: 6px;
-    top: 3px;
-    left: 0;
-  }
-
-  &::before {
-    background-image: url('../images/svg/icon-search.svg');
-    width: 20px;
-    height: 20px;
-    left: 13px;
-    bottom: 14px;
-  }
-
-  &:hover::after {
-    background-color: rgba($white, 0.1);
-  }
-
-  &:active::before {
-    opacity: 0.5;
-  }
+  border-radius: 6px;
 
   &__input {
     width: 100%;
-    padding: 15px 10px 15px 52px;
-    border-radius: 6px 0 0 6px;
+    padding: 15px 175px 15px 52px;
+    border-radius: 6px;
 
     @include r($xl) {
-      max-width: 250px;
+      padding: 15px 110px 15px 52px;
+    }
+
+    @include r($md) {
+
+      &--mobile {
+        border-radius: 0;
+        border: 1px solid $black;
+      }
     }
 
     &::placeholder {
       letter-spacing: 0.03em;
       color: $dark-800;
     }
-
-    &--mobile {
-      max-width: 100%;
-      width: 100%;
-      border-radius: 0;
-    }
   }
 
   &__btn {
     position: absolute;
+    right: 0;
     font-weight: 600;
     letter-spacing: 0.03em;
     color: $white;
@@ -584,6 +558,13 @@
       padding: 16px 26px;
     }
 
+    @include r($md) {
+
+      &--mobile {
+        border-radius: 0;
+      }
+    }
+
     &:hover {
       background-color: rgba($dark-800, 0.85);
     }
@@ -595,10 +576,6 @@
     &:active {
       color: rgba($white, 0.5);
       box-shadow: none;
-    }
-
-    &--mobile {
-      border-radius: 0;
     }
   }
 
@@ -696,6 +673,10 @@
     max-width: 100%;
     object-fit: contain;
 
+    @include r($lg) {
+      height: 400px;
+    }
+
     @include r($sm) {
       height: 320px;
     }
@@ -716,6 +697,10 @@
     margin: 0 auto;
     top: 50%;
     transform: translateY(-50%);
+
+    @include r($xxx) {
+      border-radius: 0;
+    }
 
     @include r($lg) {
       padding: 15px 15px 27px;
@@ -860,13 +845,13 @@
 
     @include r($sm) {
       width: 10px;
-       height: 10px;
+      height: 10px;
     }
   }
 
   & .slick-active button {
     background-color: $green-900;
-    
+
   }
 }
 
@@ -912,7 +897,7 @@
       }
     }
 
-  
+
 
     &--delivery::before,
     &--return::before,
@@ -966,31 +951,18 @@
     grid-gap: 30px;
     margin-bottom: 48px;
 
-    @include r($xl) { 
+    @include r($xl) {
       grid-gap: 20px;
     }
 
-    @include r($lg) { 
+    @include r($lg) {
       grid-gap: 10px;
       grid-template-columns: repeat(3, 1fr);
     }
-    
-    @include r($md) { 
+
+    @include r($md) {
       grid-gap: 5px;
       grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  &__item {
-    max-width: 300px;
-    border: 1px solid rgba(17, 17, 17, 0.2);
-    border-radius: 6px;
-    position: relative;
-    padding: 56px 0 18px;
-    transition: border 0.5s ease-in-out;
-
-    &:hover {
-      border: 1px solid $green-900;
     }
   }
 
@@ -1057,12 +1029,12 @@
 
     &::after,
     &::before {
-      content: ''; 
-      position: absolute;   
+      content: '';
+      position: absolute;
       transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
     }
 
-    &::after {      
+    &::after {
       background-color: rgba($black, 0);
       top: 0;
       right: 0;
@@ -1070,7 +1042,7 @@
       bottom: 0;
     }
 
-    &::before {     
+    &::before {
       background-image: url('../images/svg/icon-search-product.svg');
       @extend %bg;
       top: 50%;
@@ -1110,31 +1082,28 @@
   }
 
   &__text {
+    display: block;
     text-align: left;
     letter-spacing: 0.03em;
     font-weight: 600;
     color: $dark-900;
-    height: 60px;
-
-    @include line-clamp(14, 1.4, 3)
-  }
-
-  &__info {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     padding: 0 18px;
+    margin-bottom: 49px;
 
-    @include r($sm) {
-      padding: 0 12px;
+    @include line-clamp(14, 1.4, 3);
+
+    @include r($md) {
+      margin-bottom: 49px;
     }
   }
 
   &__cart {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    padding: 0 18px;
+    margin-top: auto;
   }
 
   &__icon-cart {
@@ -1169,6 +1138,13 @@
   }
 
   &__btn {
+    color: $green-900;
+    border: 1px solid $green-900;
+    background-color: $white;
+
+    @include r($sm) {
+      font-size: 18px;
+    }
 
     &:hover {
       background-color: $green-100;
@@ -1239,6 +1215,11 @@
   text-align: left;
   text-transform: uppercase;
 
+  &__action {
+    top: 0;
+    left: 0;
+  }
+
   &__item {
 
     //  Без инлайн блока, короткие бейджи 
@@ -1291,17 +1272,15 @@
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    @include r($lg) {
+    @include r($xl) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+      grid-column: 1/2;
+    }
+
+    @include r($sm) {
       grid-template-columns: 1fr;
       grid-gap: 15px;
-    }
-  }
-
-  &__item:first-child {
-    color: $white;
-
-    a {
-      border-bottom: 2px solid $white;
     }
   }
 
@@ -1312,13 +1291,33 @@
     text-transform: uppercase;
     @extend %bg;
 
+    @include r($sm) {
+      grid-column: 1;
+    }
+
+    &:first-child {
+      color: $white;
+
+      width: 100%;
+
+      a {
+        border-bottom: 2px solid $white;
+      }
+
+      @include r($xl) {
+        grid-column: 1/3;
+      }
+
+      @include r($sm) {
+        grid-column: 1;
+      }
+    }
+
     @include r($xxx) {
       padding: 76px 32px 30px 32px;
     }
 
-    @include r($xxx) {
-      padding: 76px 32px 30px 15px;
-    }
+    @include r($lg) {}
   }
 
   &__subtitle,
@@ -1395,29 +1394,27 @@
     @include r($md) {
       grid-template-columns: repeat(1, 1fr);
       margin-bottom: 24px;
+      padding: 0 15px;
+    }
+
+    @include r($m) {
+      padding: 0;
     }
   }
 
   &__item {
     text-align: left;
-
+    background-color: $white;
   }
 
   &__item-link {
-    background-color: $white;
     position: relative;
     display: flex;
-    padding: 11px;
-    border: 1px solid $silver-600;
-    border-radius: 6px;
-    transition: border 0.5s ease-in-out;
-
-    &:hover {
-      border: 1px solid $green-900;
-    }
   }
 
   &__img {
+    width: 100px;
+    height: 100px;
     margin-right: 12px;
   }
 
@@ -1498,6 +1495,13 @@
       height: 16px;
     }
   }
+
+  &__btn {
+
+    @include r($sm) {
+      font-size: 18px;
+    }
+  }
 }
 
 .condition {
@@ -1532,8 +1536,16 @@
     width: 1180px;
     height: 60px;
 
+    @include r($xl) {
+      width: 85%;
+    }
+
     @include r($lg) {
-      margin: 0 auto;
+      width: 80%;
+    }
+
+    @include r($m) {
+      width: 30%;
     }
   }
 
@@ -1546,6 +1558,7 @@
     opacity: 0.5;
     transition: opacity 0.5s ease-in-out;
     cursor: pointer;
+    margin: 0 auto;
 
     &:hover {
       opacity: 1;
@@ -1566,8 +1579,9 @@
     margin-bottom: 30px;
 
     @include r($xl) {
-      flex-direction: column; 
-      align-items: flex-start;    
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
     }
   }
 
@@ -1593,17 +1607,32 @@
     grid-gap: 30px;
 
     @include r($lg) {
-      grid-template-columns: repeat(1, 1fr);      
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include r($md) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include r($sm) {
+      grid-gap: 15px;
     }
   }
 
   &__item {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 3px rgba($black, 0.25);
     border-radius: 6px;
     cursor: pointer;
     padding-bottom: 18px;
+    margin: 0 auto;
+    max-height: 100%;
+    height: 100%;
 
-    &:hover .news__text {
+    @include r($sm) {
+      padding: 0;
+    }
+
+    &:hover .news__wrapper {
       color: $green-900;
     }
   }
@@ -1611,11 +1640,20 @@
   &__bg {
     position: relative;
     @extend %bg;
-    object-fit: cover;
+    object-fit: contain;
+  }
+
+  &__img {
+
+    border-radius: 6px 6px 0 0;
+
+    @include r($lg) {
+      width: 446px;
+    }
 
     @include r($sm) {
       width: 345px;
-      height: 240px;     
+      height: 200px;
     }
   }
 
@@ -1646,13 +1684,28 @@
     line-height: 30px;
   }
 
-  &__text {
+  &__wrapper {
     font-weight: 600;
     padding: 18px;
     height: 90px;
+    max-width: 410px;
     transition: color 0.5s ease-in-out;
 
-    @include line-clamp(16, 1.5, 4)
+    @include line-clamp(16, 1.5, 4);
+
+    @include r($sm) {
+      font-size: 14px;
+      line-height: 1.4;
+      max-width: 100%;
+      padding: 10px;
+    }
+  }
+
+  &__text {
+
+    @include r($sm) {
+      max-width: 315px;
+    }
   }
 }
 
@@ -1690,17 +1743,6 @@
     }
   }
 
-  &__logo {
-    display: inline-block;
-    margin-bottom: 30px;
-
-    @include r($lg) {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-  }
-
   &__top {
     margin-bottom: 30px;
     display: flex;
@@ -1731,15 +1773,12 @@
 
   &__form {
     position: relative;
-    max-width: 300px;
+    max-width: 306px;
     width: 100%;
-    padding-right: 118px;
   }
 
   &__form-input {
-    max-width: 180px;
-    padding: 10px;
-    border-radius: 6px 0 0 6px;
+    padding: 12px 140px 12px 12px;
 
     &::placeholder {
       line-height: 1;
@@ -1747,14 +1786,25 @@
   }
 
   &__form-btn {
-    position: absolute;
-    transform: translateY(-1px);
     font-weight: 700;
     font-size: 12px;
     line-height: 16px;
-    text-transform: uppercase;
     border-radius: 0 6px 6px 0;
-    padding: 13px 17px;
+    padding: 15px 17px;
+    background-color: $green-900;
+
+    &:hover {
+      background-color: $green-1000;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 4px $green-200;
+    }
+
+    &:active {
+      box-shadow: inset 0 4px 4px rgba($black, 0.25);
+      color: rgba($white, 0.5);
+    }
   }
 
   &__links {
@@ -1766,6 +1816,16 @@
       column-count: 2;
       margin: 0 auto;
       margin-bottom: 49px;
+    }
+
+    @include r($lg) {
+      margin: 0 0 49px 60px;
+      column-gap: 30px;
+    }
+
+    @include r($sm) {
+      margin: 0 0 49px 44px;
+      column-gap: 30px;
     }
   }
 
@@ -1871,7 +1931,7 @@
   &__icon-map {
     position: absolute;
     fill: $dark-800;
-    width: 24px;    
+    width: 24px;
     left: 0;
   }
 

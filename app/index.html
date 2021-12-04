@@ -19,30 +19,30 @@
         <div class="container">
           <div class="header__inner">
 
-            <div class="header__burger">
+            <div class="burger">
 
-              <button class="header__menu-btn">
+              <button class="burger__menu-btn">
                 <span class="sr-only">Открыть меню</span>
-                <svg class="header__btn-icon">
+                <svg class="burger__btn-icon">
                   <use xlink:href="images/sprite.svg#icon-burger"></use>
                 </svg>
               </button>
 
-              <div class="header__burger-list">
-                <div class="header__burger-wrapper">
+              <div class="burger__list">
+                <div class="burger__wrapper">
 
-                  <div class="header__burger-inner">
+                  <div class="burger__inner">
 
                     <a class="logo" href="#">
                       <img class="logo__img logo__img-burger" src="images/svg/icon-logo-green.svg" width="200"
                         height="60" alt="Логотип">
                     </a>
 
-                    <button class="header__btn-close" type="button">
+                    <button class="burger__btn-close" type="button">
 
                       <span class="sr-only">Закрыть меню</span>
 
-                      <svg class="header__close-icon">
+                      <svg class="burger__close-icon">
                         <use xlink:href="images/sprite.svg#icon-close-btn"></use>
                       </svg>
 
@@ -50,7 +50,7 @@
 
                   </div>
 
-                  <div class="header__registration">
+                  <div class="burger__registration">
 
                     <button class="user-nav__link" type="button">
                       <span class="sr-only">Личный кабинет</span>
@@ -59,15 +59,70 @@
                       </svg>
                     </button>
 
-                    <button class="header__registration-btn" type="button">Вход</button>
+                    <button class="burger__registration-btn" type="button">Вход</button>
 
-                    <span class="header__line"></span>
+                    <span class="burger__line"></span>
 
-                    <button class="header__registration-btn" type="button">Регистрация</button>
+                    <button class="burger__registration-btn" type="button">Регистрация</button>
 
                   </div>
 
-                  <button class="header__catalog header__catalog--burger" type="button">Каталог продуктов</button>
+                  <div class="header__catalog-menu header__catalog-menu--burger" data-uk-dropdown>
+                    <button class="header__catalog header__catalog--burger" type="button">Каталог продуктов</button>
+
+                    <ul class="header__catalog-list header__catalog-list--burger uk-dropdown">
+
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Овощи и фрукты</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Бакалея</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Молочные продукты</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Хлеб</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Мясо</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Колбаса</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Рыба</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Алкоголь</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Напитки</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Торты</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Мясо</a>
+                      </li>
+      
+                      <li class="header__catalog-item">
+                        <a class="header__catalog-link" href="#">Чай, кофе</a>
+                      </li>
+      
+                    </ul>
+
+                  </div>
 
                   <div class="contacts contacts__header">
 
@@ -135,31 +190,31 @@
 
                   </div>
 
-                  <ul class="header__burger-links">
+                  <ul class="burger__links">
 
-                    <li class="header__burger-item">
-                      <a class="header__burger-link" href="#">Доставка</a>
+                    <li class="burger__item">
+                      <a class="burger__link" href="#">Доставка</a>
                     </li>
-                    <li class="header__burger-item">
-                      <a class="header__burger-link" href="#">О нас</a>
+                    <li class="burger__item">
+                      <a class="burger__link" href="#">О нас</a>
                     </li>
-                    <li class="header__burger-item">
-                      <a class="header__burger-link" href="#">Новости</a>
+                    <li class="burger__item">
+                      <a class="burger__link" href="#">Новости</a>
                     </li>
-                    <li class="header__burger-item">
-                      <a class="header__burger-link" href="#">Контакты</a>
+                    <li class="burger__item">
+                      <a class="burger__link" href="#">Контакты</a>
                     </li>
-                    <li class="header__burger-item">
-                      <a class="header__burger-link" href="#">Акции</a>
+                    <li class="burger__item">
+                      <a class="burger__link" href="#">Акции</a>
                     </li>
-                    <li class="header__burger-item">
-                      <a class="header__burger-link" href="#">Вакансии</a>
+                    <li class="burger__item">
+                      <a class="burger__link" href="#">Вакансии</a>
                     </li>
-                    <li class="header__burger-item">
-                      <a class="header__burger-link" href="#">Отзывы</a>
+                    <li class="burger__item">
+                      <a class="burger__link" href="#">Отзывы</a>
                     </li>
-                    <li class="header__burger-item">
-                      <a class="header__burger-link" href="#">Публичная оферта</a>
+                    <li class="burger__item">
+                      <a class="burger__link" href="#">Публичная оферта</a>
                     </li>
 
                   </ul>
@@ -220,7 +275,8 @@
           <div class="header__wrapper">
 
             <a class="logo" href="#">
-              <img class="logo__img logo__img--header" src="images/svg/icon-logo.svg" width="200" height="60" alt="Логотип">
+              <img class="logo__img logo__img--header" src="images/svg/icon-logo.svg" width="200" height="60"
+                alt="Логотип">
               <img class="logo__mini" src="images/svg/icon-logo-mini.svg" alt="">
             </a>
 
@@ -292,26 +348,15 @@
                   </svg>
                 </button>
 
-                <div class="header__form-inner header__form-inner--mobile">
-
-                  <form class="form-search form-search__mobile" action="#">
-                    <label class="sr-only" for="search">Поиск</label>
-                    <input class="form-search__input form-search__input--mobile" type="search" id="search" name="search"
-                      placeholder="Я ищу..." required>
-                    <button class="form-search__btn form-search__btn--mobile" type="submit">поиск</button>
-                  </form>
-
-                </div>
-
               </div>
 
               <div class="header__form-inner">
 
                 <form class="form-search" action="#">
                   <label class="sr-only" for="search">Поиск</label>
-                  <input class="form-search__input" type="search" id="search" name="search"
+                  <input class="form-search__input form-search__input--mobile" type="search" id="search" name="search"
                     placeholder="Найти в магазине ..." required>
-                  <button class="form-search__btn" type="submit">поиск</button>
+                  <button class="form-search__btn form-search__btn--mobile" type="submit">поиск</button>
                 </form>
 
               </div>
@@ -530,7 +575,7 @@
                   <div class="top-product__cart">
                     <span class="top-product__price top-product__price--old">1999 <span>₽</span></span>
                     <span class="top-product__price">999 <span>₽</span></span>
-                    <button class="button button--cart" type="button">
+                    <button class="button button__cart" type="button">
                       <span class="sr-only">Корзина</span>
                       <svg class="top-product__icon-cart">
                         <use xlink:href="images/sprite.svg#icon-cart"></use>
@@ -566,7 +611,7 @@
                   </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">199 <span>₽</span></span>
-                    <button class="button button--cart" type="button">
+                    <button class="button button__cart" type="button">
                       <span class="sr-only">Корзина</span>
                       <svg class="top-product__icon-cart">
                         <use xlink:href="images/sprite.svg#icon-cart"></use>
@@ -607,7 +652,7 @@
                   </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">1019 <span>₽</span></span>
-                    <button class="button button--cart" type="button">
+                    <button class="button button__cart" type="button">
                       <span class="sr-only">Корзина</span>
                       <svg class="top-product__icon-cart">
                         <use xlink:href="images/sprite.svg#icon-cart"></use>
@@ -643,7 +688,7 @@
                   </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">600 <span>₽</span></span>
-                    <button class="button button--cart" type="button">
+                    <button class="button button__cart" type="button">
                       <span class="sr-only">Корзина</span>
                       <svg class="top-product__icon-cart">
                         <use xlink:href="images/sprite.svg#icon-cart"></use>
@@ -681,7 +726,7 @@
                   </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">49 <span>₽</span></span>
-                    <button class="button button--cart" type="button">
+                    <button class="button button__cart" type="button">
                       <span class="sr-only">Корзина</span>
                       <svg class="top-product__icon-cart">
                         <use xlink:href="images/sprite.svg#icon-cart"></use>
@@ -722,7 +767,7 @@
                   <div class="top-product__cart">
                     <div class="top-product__price top-product__price--old">299 <span></span> ₽</div>
                     <span class="top-product__price">199 <span>₽</span></span>
-                    <button class="button button--cart" type="button">
+                    <button class="button button__cart" type="button">
                       <span class="sr-only">Корзина</span>
                       <svg class="top-product__icon-cart">
                         <use xlink:href="images/sprite.svg#icon-cart"></use>
@@ -762,7 +807,7 @@
                   </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">877 <span>₽</span></span>
-                    <button class="button button--cart" type="button">
+                    <button class="button button__cart" type="button">
                       <span class="sr-only">Корзина</span>
                       <svg class="top-product__icon-cart">
                         <use xlink:href="images/sprite.svg#icon-cart"></use>
@@ -803,7 +848,7 @@
                   </a>
                   <div class="top-product__cart">
                     <span class="top-product__price">349 <span>₽</span></span>
-                    <button class="button button--cart" type="button">
+                    <button class="button button__cart" type="button">
                       <span class="sr-only">Корзина</span>
                       <svg class="top-product__icon-cart">
                         <use xlink:href="images/sprite.svg#icon-cart"></use>
@@ -820,7 +865,7 @@
 
         </div>
 
-        <button class="top-product__btn button button--white">Показать еще</button>
+        <button class="top-product__btn button">Показать еще</button>
 
       </div>
 
@@ -879,7 +924,7 @@
 
 
 
-     <section class="action section">
+    <section class="action section">
       <div class="container">
         <h2 class="title">Акции</h2>
         <div data-ref="container-2">
@@ -904,15 +949,15 @@
 
             <li class="action__item mix category-new">
 
-              <article class="product-card">
+              <article class="product-card product-card__action">
 
                 <a class="action__item-link" href="#">
 
-                  <div class="badges">
+                  <div class="badges badges__action">
                     <div class="badges__item badges__item--new">новинка</div>
                   </div>
 
-                  <img class="action__img" src="images/action/pineapple.png" wight="100" height="100" alt="Ананас">
+                  <img class="action__img" src="images/catalog/pineapple.png" wight="100" height="100" alt="Ананас">
                   <div class="action__info">
                     <h3 class="action__text">
                       Ананас, 1 кг
@@ -936,15 +981,15 @@
 
             <li class="action__item mix category-new">
 
-              <article class="product-card">
+              <article class="product-card product-card__action">
 
                 <a class="action__item-link" href="#">
 
-                  <div class="badges">
+                  <div class="badges badges__action">
                     <div class="badges__item badges__item--new">новинка</div>
                   </div>
 
-                  <img class="action__img" src="images/action/coffee.png" wight="100" height="100" alt="Кофе">
+                  <img class="action__img" src="images/catalog/coffee.png" wight="100" height="100" alt="Кофе">
                   <div class="action__info">
                     <h3 class="action__text">
                       Кофе с коноплей органический Caffé Salomoni 250г
@@ -968,15 +1013,15 @@
 
             <li class="action__item mix category-new">
 
-              <article class="product-card">
+              <article class="product-card product-card__action">
 
                 <a class="action__item-link" href="#">
 
-                  <div class="badges">
+                  <div class="badges badges__action">
                     <div class="badges__item badges__item--new">новинка</div>
                   </div>
 
-                  <img class="action__img" src="images/action/strawberry.png" wight="100" height="100" alt="Клубника">
+                  <img class="action__img" src="images/catalog/strawberry.png" wight="100" height="100" alt="Клубника">
                   <div class="action__info">
                     <h3 class="action__text">
                       Клубника, 1 кг
@@ -1000,15 +1045,15 @@
 
             <li class="action__item mix category-new">
 
-              <article class="product-card">
+              <article class="product-card product-card__action">
 
                 <a class="action__item-link" href="#">
 
-                  <div class="badges">
+                  <div class="badges badges__action">
                     <div class="badges__item badges__item--new">новинка</div>
                   </div>
 
-                  <img class="action__img" src="images/action/mango.png" wight="100" height="100" alt="Манго">
+                  <img class="action__img" src="images/catalog/mango.png" wight="100" height="100" alt="Манго">
                   <div class="action__info">
                     <h3 class="action__text">
                       Манго, 1 шт
@@ -1032,15 +1077,15 @@
 
             <li class="action__item mix category-new">
 
-              <article class="product-card">
+              <article class="product-card product-card__action">
 
                 <a class="action__item-link" href="#">
 
-                  <div class="badges">
+                  <div class="badges badges__action">
                     <div class="badges__item badges__item--new">новинка</div>
                   </div>
 
-                  <img class="action__img" src="images/action/salmon.png" wight="100" height="100" alt="Лосось">
+                  <img class="action__img" src="images/catalog/salmon.png" wight="100" height="100" alt="Лосось">
                   <div class="action__info">
                     <h3 class="action__text">
                       Лосось, 1 кг
@@ -1064,15 +1109,15 @@
 
             <li class="action__item mix category-hit">
 
-              <article class="product-card">
+              <article class="product-card product-card__action">
 
                 <a class="action__item-link" href="#">
 
-                  <div class="badges">
+                  <div class="badges badges__action">
                     <div class="badges__item badges__item--hit">хит</div>
                   </div>
 
-                  <img class="action__img" src="images/action/juice.png" wight="100" height="100" alt="Сок">
+                  <img class="action__img" src="images/catalog/juice.png" wight="100" height="100" alt="Сок">
                   <div class="action__info">
                     <h3 class="action__text">
                       Сок Granini овощной 100%, 0.5л
@@ -1096,15 +1141,15 @@
 
             <li class="action__item mix category-hit">
 
-              <article class="product-card">
+              <article class="product-card product-card__action">
 
                 <a class="action__item-link" href="#">
 
-                  <div class="badges">
+                  <div class="badges badges__action">
                     <div class="badges__item badges__item--hit">хит</div>
                   </div>
 
-                  <img class="action__img" src="images/action/fruit-basket.png" wight="100" height="100"
+                  <img class="action__img" src="images/catalog/fruit-basket.png" wight="100" height="100"
                     alt="Фруктовая корзина">
                   <div class="action__info">
                     <h3 class="action__text">
@@ -1129,15 +1174,15 @@
 
             <li class="action__item mix category-hit">
 
-              <article class="product-card">
+              <article class="product-card product-card__action">
 
                 <a class="action__item-link" href="#">
 
-                  <div class="badges">
+                  <div class="badges badges__action">
                     <div class="badges__item badges__item--hit">хит</div>
                   </div>
 
-                  <img class="action__img" src="images/action/pork.png" wight="100" height="100" alt="Свинина">
+                  <img class="action__img" src="images/catalog/pork.png" wight="100" height="100" alt="Свинина">
                   <div class="action__info">
                     <h3 class="action__text">
                       Свинина мякоть, 1 кг
@@ -1162,13 +1207,13 @@
           </ul>
 
         </div>
-        <button class="button" type="button">Показать еще</button>
+        <button class="action__btn button" type="button">Показать еще</button>
       </div>
     </section>
 
 
 
-   <section class="partners section">
+    <section class="partners section">
 
       <h2 class="sr-only">Партнеры</h2>
 
@@ -1261,7 +1306,7 @@
 
 
 
-     <section class="news">
+    <section class="news">
       <div class="container">
 
         <div class="news__inner">
@@ -1274,15 +1319,16 @@
           <li class="news__item">
             <a class="news__links" href="#">
               <div class="news__bg">
-                <img class="news__img" src="images/news/strawberry-bg.jpg" width="410" height="240" alt="Клубника">
-                <time datetime="15 июля">
+                <img class="news__img" src="images/news/strawberry-bg.jpg" width="410" height="240" alt="Манго">
+                <time datetime="07 мая">
                   <div class="news__calendar">
                     <span class="news__month">июль</span>
                     <span class="news__day">15</span>
+                  </div>
                 </time>
               </div>
-              <div class="news__text">
-                <p>
+              <div class="news__wrapper">
+                <p class="news__text">
                   Событие этого лета: распродажа сезонных фруктов в онлайн-маркете ФрешОК. Торопись, пока всё не
                   разобрали!
                 </p>
@@ -1301,8 +1347,8 @@
                   </div>
                 </time>
               </div>
-              <div class="news__text">
-                <p>
+              <div class="news__wrapper">
+                <p class="news__text">
                   Шикарнейший выбор манго в нашем онлайн-маркете
                 </p>
               </div>
@@ -1320,8 +1366,8 @@
                   </div>
                 </time>
               </div>
-              <div class="news__text">
-                <p>
+              <div class="news__wrapper">
+                <p class="news__text">
                   Всё, что вы хотели знать о папайя
                 </p>
               </div>
@@ -1338,20 +1384,20 @@
 
 
 
- <footer class="footer">
+  <footer class="footer">
     <div class="container">
-      <a class="logo footer__logo" href="#">
+      <a class="logo logo__footer" href="#">
         <img class="logo__img" src="images/svg/icon-logo.svg" alt="Логотип">
       </a>
       <div class="footer__top">
         <div class="footer__registration">
           <span class="footer__text">Следите за нашими акциями</span>
 
-          <form class="footer__form" name="email" action="#">
+          <form class="form-search footer__form" name="email" action="#">
             <label class="sr-only" for="email">Форма регистрации</label>
-            <input class="footer__form-input" name="email" id="email" type="email" placeholder="email@email.com"
-              required>
-            <button class="footer__form-btn button" type="submit">подписаться</button>
+            <input class="form-search__input footer__form-input" type="email" id="email" name="email"
+              placeholder="email@email.com" required>
+            <button class="form-search__btn footer__form-btn" type="submit">подписаться</button>
           </form>
 
         </div>
