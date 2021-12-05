@@ -104,6 +104,21 @@
     fill: $white;
     transition: fill 0.5s ease-in-out;
 
+    @include r($lg) {
+      
+      &::after {
+        content: '';
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px;
+      }
+    }
+
     &:active {
       fill: $green-200;
     }
@@ -118,6 +133,14 @@
 
   &__bottom {
     background-color: $green-900;
+  }
+
+  &__logo {
+    margin-right: 10px;
+
+    @include r($lg) {
+      display: none;
+    }
   }
 
   &__wrapper {
@@ -145,12 +168,6 @@
       max-width: 100%;
       order: 4;
       display: none;
-
-      &--burger {
-        max-width: 100%;
-        width: 100%;
-        display: block;
-      }
     }
   }
 
@@ -168,13 +185,6 @@
 
     @include r($lg) {
       border-bottom: 1px solid rgba(193, 193, 193, 0.3);
-    }
-
-    &--burger {
-      font-size: 18px;
-      line-height: 1;
-      padding: 15px 38px 15px 39px;
-      color: $dark-800;
     }
 
     &::before {
@@ -209,6 +219,15 @@
       }
     }
 
+    &.catalog--active {
+      background-color: $green-200;
+      border-radius: 6px 6px 0 0;
+
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+
     &:hover {
       background-color: $green-200;
       border-radius: 6px 6px 0 0;
@@ -217,7 +236,6 @@
         background-color: $white;
         border-radius: 0;
       }
-
 
       &::after {
         transform: rotate(-180deg);
@@ -244,8 +262,9 @@
     opacity: 0;
     transition: transform 0.5s ease-in-out;
 
-    &--burger {
-      width: 100%;
+    &.catalog--active {
+      transform: translateY(0);
+      opacity: 1;
     }
 
     &:hover {
@@ -277,10 +296,15 @@
     max-width: 577px;
     width: 100%;
 
+    @include r($xxx) {
+      margin-right: 10px;
+    }
+
     @include r($md) {
       max-width: 50px;
       width: 100%;
       margin-left: auto;
+      margin-right: 0;
     }
   }
 
@@ -377,16 +401,49 @@
     display: block;
   }
 
+  .social__icon {
+    fill: $dark-800;
+  }
+
   &__menu-btn {
     position: relative;
     z-index: 10;
     margin-left: 5px;
+    width: 30px;
+    height: 20px;
   }
 
   &__btn-icon {
-    stroke: $white;
+    position: absolute;
+    background-color: $white;
+    right: 0;
+    left: 0;
     width: 30px;
-    height: 20px;
+    height: 2px;
+    z-index: 11;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: $white;
+    }
+
+    &::after {
+      top: 10px;
+    }
+
+    &::before {
+      bottom: 10px;
+    }
+  }
+
+  &__logo-img {
+    display: block;
   }
 
   &__list {
@@ -433,7 +490,6 @@
     padding: 26px 15px 26px 15px;
     background-color: $white;
   }
-
 
   &__btn-close {
     padding: 11px;
@@ -485,9 +541,44 @@
     background-color: $white;
   }
 
+  &__catalog-menu {
+
+    @include r($lg) {
+      max-width: 100%;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__catalog {
+    font-size: 18px;
+    line-height: 1;
+    padding: 15px 38px 15px 39px;
+    color: $dark-800;
+  }
+
+  &__catalog-list {
+    width: 100%;
+  }
+
   &__contacts-link {
     padding-left: 32px;
     color: $black;
+  }
+
+  &__contacts {
+    padding: 24px 0 24px 15px;
+    border-bottom: 1px solid rgba(193, 193, 193, 0.3);
+    text-transform: none;
+  }
+
+  &__contacts-link {
+    position: relative;
+    color: $dark-800;
+    padding-left: 39px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
   }
 
   &__links {
@@ -578,11 +669,6 @@
       box-shadow: none;
     }
   }
-
-  &__mobile {
-    max-width: 100%;
-    width: 100%;
-  }
 }
 
 .user-nav {
@@ -665,6 +751,15 @@
 // SLIDER-TOP// SLIDER-TOP// SLIDER-TOP// SLIDER-TOP
 
 .slider-top {
+  height: 600px;
+
+  @include r($lg) {
+    height: 400px;
+  }
+
+  @include r($sm) {
+    height: 320px;
+  }
 
   &__item {
     position: relative;
@@ -691,7 +786,7 @@
     position: absolute;
     max-width: 1290px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba($white, 0.8);
     padding: 24px 24px 36px;
     border-radius: 4px;
     margin: 0 auto;
@@ -756,7 +851,6 @@
   }
 
   &__text {
-    font-size: 16px;
     margin-bottom: 44px;
 
     @include line-clamp(16, 1.4, 2);
@@ -795,8 +889,6 @@
     & path {
       transition: fill 0.5s ease-in-out;
     }
-
-    // :disabled почему то не работает
 
     &:disabled.slick-disabled svg {
       fill: $silver-600;
@@ -1088,7 +1180,6 @@
     font-weight: 600;
     color: $dark-900;
     padding: 0 18px;
-    margin-bottom: 49px;
 
     @include line-clamp(14, 1.4, 3);
 
@@ -1201,10 +1292,11 @@
       box-shadow: none;
       border-bottom: 3px solid $green-200;
     }
-
   }
 
-
+  .mixitup-control-active {
+    border-bottom: 3px solid $green-200;
+  }
 }
 
 .badges {
@@ -1221,9 +1313,6 @@
   }
 
   &__item {
-
-    //  Без инлайн блока, короткие бейджи 
-    // растягиваются на всю ширину блока, поэтому так
 
     display: inline-block;
     font-weight: 700;
@@ -1247,10 +1336,6 @@
       background-color: $orange-900;
     }
   }
-}
-
-.mixitup-control-active {
-  border-bottom: 3px solid $green-200;
 }
 
 // ADVERTISING// ADVERTISING// ADVERTISING// ADVERTISING
@@ -1743,6 +1828,17 @@
     }
   }
 
+  &__logo {
+    display: inline-block;
+    margin-bottom: 30px;
+
+    @include r($lg) {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+  }
+
   &__top {
     margin-bottom: 30px;
     display: flex;
@@ -1857,6 +1953,13 @@
     }
   }
 
+  &__social {
+
+    @include r($lg) {
+      justify-content: center;
+    }
+  }
+
   &__bottom {
     padding: 24px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1884,12 +1987,6 @@
     }
   }
 
-  &__header {
-    padding: 24px 0 24px 15px;
-    border-bottom: 1px solid rgba(193, 193, 193, 0.3);
-    text-transform: none;
-  }
-
   &__item {
     margin-bottom: 18px;
 
@@ -1901,15 +1998,6 @@
   &__link {
     display: block;
     transition: opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
-
-    &--header {
-      position: relative;
-      color: $dark-800;
-      padding-left: 39px;
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 15px;
-    }
 
     &:hover {
       opacity: 0.7;
@@ -1948,13 +2036,6 @@
 .social {
   display: flex;
 
-  &__footer {
-
-    @include r($lg) {
-      justify-content: center;
-    }
-  }
-
   &__item:not(:last-child) {
     margin-right: 10px;
   }
@@ -1986,10 +2067,6 @@
     width: 32px;
     height: 32px;
     fill: $white;
-
-    &--header {
-      fill: $dark-800;
-    }
   }
 }
 

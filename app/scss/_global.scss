@@ -36,32 +36,9 @@ img {
 
 .logo {
 
-  &__footer {
-    display: inline-block;
-    margin-bottom: 30px;
-
-    @include r($lg) {
-      display: flex;
-      justify-content: center;
-      margin: 0 auto 24px;
-    }
-  }
-
   &__img {
     min-width: 200px;
     height: 60px;
-
-    &--header {
-      margin-right: 10px;
-
-      @include r($lg) {
-        display: none;
-      }
-    }
-  }
-
-  &__img-burger {
-    display: block;
   }
 
   &__mini {

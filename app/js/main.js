@@ -21,8 +21,27 @@ $(function () {
   //   readOnly: true
   // });
 
-  $('.header__catalog, .burger__menu-btn, .burger__list').on('click', function () {
-    $('.header__catalog, .header__catalog-list, .burger__list, .burger__wrapper').toggleClass('btn--active');
+  $('.header__catalog').on('click', function () {
+    $('.header__catalog, .header__catalog-list').toggleClass('catalog--active');
+  });
+
+  $('.header__catalog').on('click', function() {
+    $(this).parent().removeClass('catalog--active')
+  })
+
+  let headerCatalog = $('.header__catalog');
+  let catalogMenu = $('.header__catalog, .header__catalog-list');
+
+  $(document).mouseup(function (e) {
+    if ( ! headerCatalog.is(e.target) && headerCatalog.has(e.target).length === 0 &&
+        ! catalogMenu.is(e.target) && catalogMenu.has(e.target).length === 0
+        ) {
+          catalogMenu.removeClass('catalog--active');
+        }
+  });
+
+  $('.burger__menu-btn, .burger__list').on('click', function () {
+    $('.burger__list, .burger__wrapper').toggleClass('btn--active');
   });
   
   $(".header__btn-close").on("click", function() {

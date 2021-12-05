@@ -23,9 +23,7 @@
 
               <button class="burger__menu-btn">
                 <span class="sr-only">Открыть меню</span>
-                <svg class="burger__btn-icon">
-                  <use xlink:href="images/sprite.svg#icon-burger"></use>
-                </svg>
+                <span class="burger__btn-icon"></span>
               </button>
 
               <div class="burger__list">
@@ -34,7 +32,7 @@
                   <div class="burger__inner">
 
                     <a class="logo" href="#">
-                      <img class="logo__img logo__img-burger" src="images/svg/icon-logo-green.svg" width="200"
+                      <img class="logo__img burger__logo-img" src="images/svg/icon-logo-green.svg" width="200"
                         height="60" alt="Логотип">
                     </a>
 
@@ -67,10 +65,10 @@
 
                   </div>
 
-                  <div class="header__catalog-menu header__catalog-menu--burger" data-uk-dropdown>
-                    <button class="header__catalog header__catalog--burger" type="button">Каталог продуктов</button>
+                  <div class="header__catalog-menu burger__catalog-menu" data-uk-dropdown>
+                    <button class="header__catalog burger__catalog" type="button">Каталог продуктов</button>
 
-                    <ul class="header__catalog-list header__catalog-list--burger uk-dropdown">
+                    <ul class="header__catalog-list burger__catalog-list uk-dropdown">
 
                       <li class="header__catalog-item">
                         <a class="header__catalog-link" href="#">Овощи и фрукты</a>
@@ -124,12 +122,12 @@
 
                   </div>
 
-                  <div class="contacts contacts__header">
+                  <div class="contacts burger__contacts">
 
-                    <ul class="contacts__links contacts__links--header">
+                    <ul class="contacts__links">
 
-                      <li class="contacts__item contacts__item--contact-header">
-                        <a class="contacts__link contacts__link--header" href="tel:+7907288365">
+                      <li class="contacts__item">
+                        <a class="contacts__link burger__contacts-link" href="tel:+7907288365">
                           <svg class="contacts__icon-tel">
                             <use xlink:href="images/sprite.svg#icon-tel"></use>
                           </svg>
@@ -137,8 +135,8 @@
                         </a>
                       </li>
 
-                      <li class="contacts__item contacts__item--contact-header">
-                        <a class="contacts__link contacts__link--header" href="#">
+                      <li class="contacts__item">
+                        <a class="contacts__link burger__contacts-link" href="#">
                           <svg class="contacts__icon-map">
                             <use xlink:href="images/sprite.svg#icon-map"></use>
                           </svg>
@@ -153,7 +151,7 @@
                       <li class="social__item">
                         <span class="sr-only">Написать в Фейсбук</span>
                         <a class="social__link" href="#">
-                          <svg class="social__icon social__icon--header">
+                          <svg class="social__icon">
                             <use xlink:href="images/sprite.svg#icon-facebook"></use>
                           </svg>
                         </a>
@@ -162,7 +160,7 @@
                       <li class="social__item">
                         <span class="sr-only">Перейти в Ютуб</span>
                         <a class="social__link" href="#">
-                          <svg class="social__icon social__icon--header">
+                          <svg class="social__icon">
                             <use xlink:href="images/sprite.svg#icon-youtube"></use>
                           </svg>
                         </a>
@@ -171,7 +169,7 @@
                       <li class="social__item">
                         <span class="sr-only">Написать в Телеграм</span>
                         <a class="social__link" href="#">
-                          <svg class="social__icon social__icon--header">
+                          <svg class="social__icon">
                             <use xlink:href="images/sprite.svg#icon-telegram"></use>
                           </svg>
                         </a>
@@ -180,7 +178,7 @@
                       <li class="social__item">
                         <span class="sr-only">Написать в Инстаграмм</span>
                         <a class="social__link" href="#">
-                          <svg class="social__icon social__icon--header">
+                          <svg class="social__icon">
                             <use xlink:href="images/sprite.svg#icon-instagram"></use>
                           </svg>
                         </a>
@@ -224,7 +222,6 @@
             </div>
 
             <ul class="header__list">
-
               <li class="header__item">
                 <a class="header__link header__link--adress" href="#">
                   <svg class="header__link-icon">
@@ -242,11 +239,9 @@
                   <span class="header__link-text">горячая линия 24/7</span>
                 </a>
               </li>
-
             </ul>
 
             <ul class="header__list header__list--right">
-
               <li class="header__item">
                 <a class="header__link" href="#">
                   доставка
@@ -275,10 +270,17 @@
           <div class="header__wrapper">
 
             <a class="logo" href="#">
-              <img class="logo__img logo__img--header" src="images/svg/icon-logo.svg" width="200" height="60"
+              <img class="logo__img header__logo" src="images/svg/icon-logo.svg" width="200" height="60"
                 alt="Логотип">
               <img class="logo__mini" src="images/svg/icon-logo-mini.svg" alt="">
             </a>
+
+            <!-- <a class="logo" href="#">
+              <picture>              
+                <img class="logo__img header__logo" src="images/svg/icon-logo.svg" width="200" height="60" alt="Логотип">
+                <source media="(max-width: 992px)" width="37" height="40" srcset="images/svg/icon-logo-mini.svg">
+              </picture>
+            </a> -->
 
             <div class="header__catalog-menu" data-uk-dropdown>
               <button class="header__catalog" type="button">Каталог продуктов</button>
@@ -550,8 +552,8 @@
               <article class="product-card">
 
                 <div class="badges">
-                  <div class="badges__item badges__item--new">новинка</div>
-                  <div class="badges__item badges__item--discount">-50%</div>
+                  <di class="badges__item badges__item--new">новинка</di>
+                  <di class="badges__item badges__item--discount">-50%</di>
                 </div>
 
                 <button class="top-product__favorite" type="button">
@@ -565,8 +567,7 @@
                   <img class="top-product__img" src="images/catalog/pineapple.png" width="298" height="215"
                     alt="Ананас">
                 </a>
-
-                <div class="top-product__info">
+               
                   <a class="top-product__heading" href="#">
                     <h3 class="top-product__text">
                       Ананас, 1кг
@@ -582,8 +583,7 @@
                       </svg>
                     </button>
                   </div>
-                </div>
-
+                
               </article>
 
             </li>
@@ -602,8 +602,7 @@
                 <a class="top-product__link" href="#">
                   <img class="top-product__img" src="images/catalog/lemon.png" width="298" height="215" alt="Лимон">
                 </a>
-
-                <div class="top-product__info">
+                
                   <a class="top-product__heading" href="#">
                     <h3 class="top-product__text">
                       Лимон, 1кг
@@ -618,8 +617,7 @@
                       </svg>
                     </button>
                   </div>
-                </div>
-
+               
               </article>
 
             </li>
@@ -629,7 +627,7 @@
               <article class="product-card">
 
                 <div class="badges">
-                  <div class="badges__item badges__item--hit">хит</div>
+                  <di class="badges__item badges__item--hit">хит</di>
                 </div>
 
                 <button class="top-product__favorite" type="button">
@@ -643,8 +641,7 @@
                   <img class="top-product__img" src="images/catalog/pitahaya.png" width="298" height="215"
                     alt="Питахайя">
                 </a>
-
-                <div class="top-product__info">
+               
                   <a class="top-product__heading" href="#">
                     <h3 class="top-product__text">
                       Питахайя красная с белой мякотью, 1шт
@@ -659,8 +656,7 @@
                       </svg>
                     </button>
                   </div>
-                </div>
-
+              
               </article>
 
             </li>
@@ -679,8 +675,7 @@
                 <a class="top-product__link" href="#">
                   <img class="top-product__img" src="images/catalog/ketchup.png" width="298" height="215" alt="Кетчуп">
                 </a>
-
-                <div class="top-product__info">
+              
                   <a class="top-product__heading" href="#">
                     <h3 class="top-product__text">
                       Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
@@ -695,7 +690,7 @@
                       </svg>
                     </button>
                   </div>
-                </div>
+              
               </article>
             </li>
 
@@ -704,7 +699,7 @@
               <article class="product-card">
 
                 <div class="badges">
-                  <div class="badges__item badges__item--hit">хит</div>
+                  <di class="badges__item badges__item--hit">хит</di>
                 </div>
 
                 <button class="top-product__favorite" type="button">
@@ -717,8 +712,7 @@
                 <a class="top-product__link" href="#">
                   <img class="top-product__img" src="images/catalog/carrot.png" width="298" height="215" alt="Морковь">
                 </a>
-
-                <div class="top-product__info">
+               
                   <a class="top-product__heading" href="#">
                     <h3 class="top-product__text">
                       Морковь молодая с бабушкиной грядки, 1кг
@@ -733,8 +727,7 @@
                       </svg>
                     </button>
                   </div>
-                </div>
-
+                
               </article>
 
             </li>
@@ -744,7 +737,7 @@
               <article class="product-card">
 
                 <div class="badges">
-                  <div class="badges__item badges__item--discount">-30%</div>
+                  <di class="badges__item badges__item--discount">-30%</di>
                 </div>
 
                 <button class="top-product__favorite" type="button">
@@ -757,8 +750,7 @@
                 <a class="top-product__link" href="#">
                   <img class="top-product__img" src="images/catalog/drink.png" width="298" height="215" alt="Напиток">
                 </a>
-
-                <div class="top-product__info">
+              
                   <a class="top-product__heading" href="#">
                     <h3 class="top-product__text">
                       Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...
@@ -774,8 +766,7 @@
                       </svg>
                     </button>
                   </div>
-                </div>
-
+               
               </article>
 
             </li>
@@ -785,7 +776,7 @@
               <article class="product-card">
 
                 <div class="badges">
-                  <div class="badges__item badges__item--new">новинка</div>
+                  <di class="badges__item badges__item--new">новинка</di>
                 </div>
 
                 <button class="top-product__favorite" type="button">
@@ -798,8 +789,7 @@
                 <a class="top-product__link" href="#">
                   <img class="top-product__img" src="images/catalog/coffee.png" width="298" height="215" alt="Кофе">
                 </a>
-
-                <div class="top-product__info">
+                
                   <a class="top-product__heading" href="#">
                     <h3 class="top-product__text">
                       Кофе с коноплей органический Caffé Salomoni 250г
@@ -814,8 +804,7 @@
                       </svg>
                     </button>
                   </div>
-                </div>
-
+               
               </article>
 
             </li>
@@ -825,7 +814,7 @@
               <article class="product-card">
 
                 <div class="badges">
-                  <div class="badges__item badges__item--new">новинка</div>
+                  <di class="badges__item badges__item--new">новинка</di>
                 </div>
 
                 <button class="top-product__favorite" type="button">
@@ -839,8 +828,7 @@
                   <img class="top-product__img" src="images/catalog/pepper.png" width="298" height="215"
                     alt="Сладкий перец">
                 </a>
-
-                <div class="top-product__info">
+                
                   <a class="top-product__heading" href="#">
                     <h3 class="top-product__text">
                       Перец оранжевый, 1кг
@@ -855,8 +843,7 @@
                       </svg>
                     </button>
                   </div>
-                </div>
-
+               
               </article>
 
             </li>
@@ -881,9 +868,9 @@
 
           <li class="advertising__item" style="background-image: url('images/advertising/fruits-bg.jpg');">
             <div class="advertising__subtitle">
-              <p>
+              <span>
                 свежайшие фрукты
-              </p>
+              </span>
             </div>
             <h3 class="advertising__title advertising__title--big">
               начни фруктовое лето всего <span>От</span> 99 ₽
@@ -893,9 +880,9 @@
 
           <li class="advertising__item" style="background-image: url('images/advertising/vegetables-bg.jpg');">
             <div class="advertising__subtitle">
-              <p>
+              <span>
                 сезонная распродажа
-              </p>
+              </span>
             </div>
             <h3 class="advertising__title">
               овощепад
@@ -906,9 +893,9 @@
 
           <li class="advertising__item" style="background-image: url('images/advertising/bread-bg.jpg');">
             <div class="advertising__subtitle">
-              <p>
+              <span>
                 ням-ням
-              </p>
+              </span>
             </div>
             <h3 class="advertising__title">
               свежий
@@ -954,7 +941,7 @@
                 <a class="action__item-link" href="#">
 
                   <div class="badges badges__action">
-                    <div class="badges__item badges__item--new">новинка</div>
+                    <span class="badges__item badges__item--new">новинка</span>
                   </div>
 
                   <img class="action__img" src="images/catalog/pineapple.png" wight="100" height="100" alt="Ананас">
@@ -963,12 +950,12 @@
                       Ананас, 1 кг
                     </h3>
                     <div class="condition">
-                      <div class="condition__item condition__item--yes">в наличии</div>
+                      <span class="condition__item condition__item--yes">в наличии</span>
                     </div>
                     <div class="action__bar">
                       <div class="action__price-inner">
-                        <div class="action__price">999<span class="action__currency">₽</span></div>
-                        <div class="action__price action__price--old">1999 <span>₽</span></div>
+                        <span class="action__price">999<span class="action__currency">₽</span></span>
+                        <span class="action__price action__price--old">1999 <span>₽</span></span>
                       </div>
                       <div class="action__num">4.5</div>
                     </div>
@@ -986,7 +973,7 @@
                 <a class="action__item-link" href="#">
 
                   <div class="badges badges__action">
-                    <div class="badges__item badges__item--new">новинка</div>
+                    <span class="badges__item badges__item--new">новинка</span>
                   </div>
 
                   <img class="action__img" src="images/catalog/coffee.png" wight="100" height="100" alt="Кофе">
@@ -995,12 +982,12 @@
                       Кофе с коноплей органический Caffé Salomoni 250г
                     </h3>
                     <div class="condition">
-                      <div class="condition__item condition__item--ends">заканчивается</div>
+                      <span class="condition__item condition__item--ends">заканчивается</span>
                     </div>
                     <div class="action__bar">
                       <div class="action__price-inner">
-                        <div class="action__price">777<span class="action__currency">₽</span></div>
-                        <div class="action__price action__price--old">877 <span>₽</span></div>
+                        <span class="action__price">777<span class="action__currency">₽</span></span>
+                        <span class="action__price action__price--old">877 <span>₽</span></span>
                       </div>
                       <div class="action__num">4.9</div>
                     </div>
@@ -1018,7 +1005,7 @@
                 <a class="action__item-link" href="#">
 
                   <div class="badges badges__action">
-                    <div class="badges__item badges__item--new">новинка</div>
+                    <span class="badges__item badges__item--new">новинка</span>
                   </div>
 
                   <img class="action__img" src="images/catalog/strawberry.png" wight="100" height="100" alt="Клубника">
@@ -1027,12 +1014,12 @@
                       Клубника, 1 кг
                     </h3>
                     <div class="condition">
-                      <div class="condition__item condition__item--no">нет в наличии</div>
+                      <span class="condition__item condition__item--no">нет в наличии</span>
                     </div>
                     <div class="action__bar">
                       <div class="action__price-inner">
-                        <div class="action__price">440<span class="action__currency">₽</span></div>
-                        <div class="action__price action__price--old">600 <span>₽</span></div>
+                        <span class="action__price">440<span class="action__currency">₽</span></span>
+                        <span class="action__price action__price--old">600 <span>₽</span></span>
                       </div>
                       <div class="action__num">5.0</div>
                     </div>
@@ -1050,7 +1037,7 @@
                 <a class="action__item-link" href="#">
 
                   <div class="badges badges__action">
-                    <div class="badges__item badges__item--new">новинка</div>
+                    <span class="badges__item badges__item--new">новинка</span>
                   </div>
 
                   <img class="action__img" src="images/catalog/mango.png" wight="100" height="100" alt="Манго">
@@ -1059,12 +1046,12 @@
                       Манго, 1 шт
                     </h3>
                     <div class="condition">
-                      <div class="condition__item condition__item--yes">в наличии</div>
+                      <span class="condition__item condition__item--yes">в наличии</span>
                     </div>
                     <div class="action__bar">
                       <div class="action__price-inner">
-                        <div class="action__price">660<span class="action__currency">₽</span></div>
-                        <div class="action__price action__price--old">960 <span>₽</span></div>
+                        <span class="action__price">660<span class="action__currency">₽</span></span>
+                        <span class="action__price action__price--old">960 <span>₽</span></span>
                       </div>
                       <div class="action__num">5.0</div>
                     </div>
@@ -1082,7 +1069,7 @@
                 <a class="action__item-link" href="#">
 
                   <div class="badges badges__action">
-                    <div class="badges__item badges__item--new">новинка</div>
+                    <span class="badges__item badges__item--new">новинка</span>
                   </div>
 
                   <img class="action__img" src="images/catalog/salmon.png" wight="100" height="100" alt="Лосось">
@@ -1091,12 +1078,12 @@
                       Лосось, 1 кг
                     </h3>
                     <div class="condition">
-                      <div class="condition__item condition__item--yes">в наличии</div>
+                      <span class="condition__item condition__item--yes">в наличии</span>
                     </div>
                     <div class="action__bar">
                       <div class="action__price-inner">
-                        <div class="action__price">999<span class="action__currency">₽</span></div>
-                        <div class="action__price action__price--old">1199 <span>₽</span></div>
+                        <span class="action__price">999<span class="action__currency">₽</span></span>
+                        <span class="action__price action__price--old">1199 <span>₽</span></span>
                       </div>
                       <div class="action__num">4.5</div>
                     </div>
@@ -1114,7 +1101,7 @@
                 <a class="action__item-link" href="#">
 
                   <div class="badges badges__action">
-                    <div class="badges__item badges__item--hit">хит</div>
+                    <span class="badges__item badges__item--hit">хит</span>
                   </div>
 
                   <img class="action__img" src="images/catalog/juice.png" wight="100" height="100" alt="Сок">
@@ -1123,12 +1110,12 @@
                       Сок Granini овощной 100%, 0.5л
                     </h3>
                     <div class="condition">
-                      <div class="condition__item condition__item--ends">заканчивается</div>
+                      <span class="condition__item condition__item--ends">заканчивается</span>
                     </div>
                     <div class="action__bar">
                       <div class="action__price-inner">
-                        <div class="action__price">180<span class="action__currency">₽</span></div>
-                        <div class="action__price action__price--old">230 <span>₽</span></div>
+                        <span class="action__price">180<span class="action__currency">₽</span></span>
+                        <span class="action__price action__price--old">230 <span>₽</span></span>
                       </div>
                       <div class="action__num">4.9</div>
                     </div>
@@ -1146,7 +1133,7 @@
                 <a class="action__item-link" href="#">
 
                   <div class="badges badges__action">
-                    <div class="badges__item badges__item--hit">хит</div>
+                    <span class="badges__item badges__item--hit">хит</span>
                   </div>
 
                   <img class="action__img" src="images/catalog/fruit-basket.png" wight="100" height="100"
@@ -1156,12 +1143,12 @@
                       Фруктовая корзина, 1 шт
                     </h3>
                     <div class="condition">
-                      <div class="condition__item condition__item--yes">в наличии</div>
+                      <span class="condition__item condition__item--yes">в наличии</span>
                     </div>
                     <div class="action__bar">
                       <div class="action__price-inner">
-                        <div class="action__price">3990<span class="action__currency">₽</span></div>
-                        <div class="action__price action__price--old">5990 <span>₽</span></div>
+                        <span class="action__price">3990<span class="action__currency">₽</span></span>
+                        <span class="action__price action__price--old">5990 <span>₽</span></span>
                       </div>
                       <div class="action__num">4.8</div>
                     </div>
@@ -1179,7 +1166,7 @@
                 <a class="action__item-link" href="#">
 
                   <div class="badges badges__action">
-                    <div class="badges__item badges__item--hit">хит</div>
+                    <span class="badges__item badges__item--hit">хит</span>
                   </div>
 
                   <img class="action__img" src="images/catalog/pork.png" wight="100" height="100" alt="Свинина">
@@ -1188,12 +1175,12 @@
                       Свинина мякоть, 1 кг
                     </h3>
                     <div class="condition">
-                      <div class="condition__item condition__item--yes">в наличии</div>
+                      <span class="condition__item condition__item--yes">в наличии</span>
                     </div>
                     <div class="action__bar">
                       <div class="action__price-inner">
-                        <div class="action__price">499<span class="action__currency">₽</span></div>
-                        <div class="action__price action__price--old">599 <span>₽</span></div>
+                        <span class="action__price">499<span class="action__currency">₽</span></span>
+                        <span class="action__price action__price--old">599 <span>₽</span></span>
                       </div>
                       <div class="action__num">4.6</div>
                     </div>
@@ -1386,7 +1373,7 @@
 
   <footer class="footer">
     <div class="container">
-      <a class="logo logo__footer" href="#">
+      <a class="logo footer__logo" href="#">
         <img class="logo__img" src="images/svg/icon-logo.svg" alt="Логотип">
       </a>
       <div class="footer__top">
@@ -1456,7 +1443,7 @@
 
           </ul>
 
-          <ul class="social social__footer">
+          <ul class="social footer__social">
 
             <li class="social__item">
               <span class="sr-only">Написать в Фейсбук</span>
