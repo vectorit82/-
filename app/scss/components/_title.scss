@@ -1,0 +1,14 @@
+.title {
+  font-family: 'Ruda', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: $dark-900;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 0.03em;
+
+  @include r($lg) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}

@@ -1,0 +1,15 @@
+.logo {
+
+  &__img {
+    min-width: 200px;
+    height: 60px;
+  }
+
+  &__mini {
+    display: none;
+
+    @include r($lg) {
+      display: block;
+    }
+  }
+}

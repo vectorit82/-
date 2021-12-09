@@ -1,0 +1,36 @@
+.partners {
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 1180px;
+    height: 60px;
+
+    @include r($xl) {
+      width: 85%;
+    }
+
+    @include r($lg) {
+      width: 80%;
+    }
+
+    @include r($m) {
+      width: 30%;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80px;
+    height: 60px;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
+    margin: 0 auto;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

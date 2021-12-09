@@ -1,0 +1,76 @@
+.user-nav {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 12px;
+
+      @include r($lg) {
+        display: none;
+        order: 4;
+      }
+    }
+
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    @include r($lg) {
+      width: 44px;
+      height: 44px;
+    }
+
+    &:hover {
+      background-color: rgba($white, 0.1);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 4px #E0EDCF;
+    }
+
+    &:active {
+      opacity: 0.5;
+      box-shadow: none;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    fill: $white;
+
+    @include r($lg) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__num {
+    position: absolute;
+    border-radius: 100px;
+    color: $red-900;
+    background-color: $white;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: center;
+    padding: 0 3px;
+    top: 2px;
+    right: 30px;
+    pointer-events: none;
+    z-index: 1;
+
+    @include r($lg) {
+      right: 25px;
+    }
+  }
+}

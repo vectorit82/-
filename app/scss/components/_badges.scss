@@ -1,0 +1,38 @@
+.badges {
+  width: 66px;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  text-align: left;
+  text-transform: uppercase;
+
+  &__action {
+    top: 0;
+    left: 0;
+  }
+
+  &__item {
+
+    display: inline-block;
+    font-weight: 700;
+    color: $white;
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin-bottom: 3px;
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+
+    &--new {
+      background-color: $green-900;
+    }
+
+    &--discount {
+      background-color: $red-900;
+    }
+
+    &--hit {
+      background-color: $orange-900;
+    }
+  }
+}

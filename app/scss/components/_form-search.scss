@@ -1,0 +1,65 @@
+.form-search {
+  width: 100%;
+  border-radius: 6px;
+
+  &__input {
+    width: 100%;
+    padding: 15px 175px 15px 52px;
+    border-radius: 6px;
+
+    @include r($xl) {
+      padding: 15px 110px 15px 52px;
+    }
+
+    @include r($md) {
+
+      &--mobile {
+        border-radius: 0;
+        border: 1px solid $black;
+      }
+    }
+
+    &::placeholder {
+      letter-spacing: 0.03em;
+      color: $dark-800;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    right: 0;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: $white;
+    padding: 16px 53px;
+    text-transform: uppercase;
+    background-color: $dark-800;
+    border-radius: 0 6px 6px 0;
+    transform: translateY(-1px);
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+
+    @include r($xl) {
+      padding: 16px 26px;
+    }
+
+    @include r($md) {
+
+      &--mobile {
+        border-radius: 0;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($dark-800, 0.85);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba($white, 0.5);
+    }
+
+    &:active {
+      color: rgba($white, 0.5);
+      box-shadow: none;
+    }
+  }
+}

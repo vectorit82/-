@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ФрешОк Онлайн-маркет</title>
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="body">
+
+  @include('./page-components/header.html')
+
+  <main class="main">
+
+    <h1 class="sr-only">Онлан маркет продуктов питания</h1>
+
+    @include('./page-index/slider-top.html')
+
+    @include('./page-components/advantages.html')
+
+    @include('./page-index/top-product.html')
+
+    @include('./page-index/advertising.html')
+
+    @include('./page-index/action.html')
+
+    @include('./page-index/partners.html')
+
+    @include('./page-index/news.html')
+
+  </main>
+
+  @include('./page-components/footer.html')
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

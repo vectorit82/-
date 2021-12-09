@@ -1,0 +1,8 @@
+.section {
+  padding: 72px 0;
+  text-align: center;
+
+  @include r($lg) {
+    padding: 48px 0;
+  }
+}

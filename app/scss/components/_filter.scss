@@ -1,0 +1,50 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+
+  @include r($lg) {
+    margin-bottom: 9px;
+  }
+
+  @include r($sm) {
+    flex-wrap: wrap;
+  }
+
+  &__button:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__btn {
+    font-weight: 700;
+    color: $dark-500;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+    transition: color 0.5s ease-in-out, border-bottom 0.3s ease-in-out;
+
+    @include r($lg) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    &:hover {
+      color: $green-900;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      border-radius: 3px;
+    }
+
+    &:active {
+      box-shadow: none;
+      border-bottom: 3px solid $green-200;
+    }
+  }
+
+  .mixitup-control-active {
+    border-bottom: 3px solid $green-200;
+  }
+}

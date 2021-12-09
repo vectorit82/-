@@ -1,0 +1,201 @@
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  border-radius: 6px;
+  position: relative;
+  padding: 56px 0 18px;
+  transition: border 0.5s ease-in-out;
+
+  @include r($md) {
+    max-width: 100%;
+  }
+
+  &:hover {
+    border: 1px solid $green-900;
+  }
+
+  &__action {
+    padding: 11px;
+  }
+
+  &__favorite {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    top: 10px;
+    right: 7px;
+    padding-top: 9px;
+    z-index: 1;
+
+    @include r($sm) {
+      width: 36px;
+      height: 36px;
+    }
+
+    &:hover svg {
+      fill: $yellow-900;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      border-radius: 3px;
+    }
+
+    &:active svg {
+      fill: rgba(255, 184, 0, 0.5);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  &__icon-favorite {
+    width: 32px;
+    height: 29px;
+    fill: $silver-600;
+    transition: fill 0.5s ease-in-out;
+
+    @include r($lg) {
+      width: 24px;
+      height: 22px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+    max-width: 100%;
+    height: 215px;
+
+    @include r($sm) {
+      height: 120px;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    }
+
+    &::after {
+      background-color: rgba($black, 0);
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+
+    &::before {
+      background-image: url('../images/svg/icon-search-product.svg');
+      @extend %bg;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: $white;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      background-color: rgba($black, 0.1);
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    max-width: 100%;
+
+    @include r($sm) {
+      height: 120px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 10px;
+
+    @include r($sm) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__text {
+    display: block;
+    text-align: left;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+    color: $dark-900;
+    padding: 0 18px;
+
+    @include line-clamp(14, 1.4, 3);
+
+    @include r($md) {
+      margin-bottom: 49px;
+    }
+  }
+
+  &__cart {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 18px;
+    margin-top: auto;
+  }
+
+  &__icon-cart {
+    width: 16px;
+    height: 16px;
+    fill: $white;
+  }
+
+  &__price {
+    letter-spacing: 0.03em;
+    line-height: 1;
+    color: $dark-500;
+
+    &--old {
+      position: absolute;
+      bottom: 17px;
+      color: $silver-600;
+      letter-spacing: 0.03em;
+      line-height: 1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: $silver-600;
+        width: 100%;
+        height: 1px;
+        transform: rotate(-20deg);
+        top: 6px;
+        left: 0;
+      }
+    }
+  }
+
+  &__btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+   
+    & svg {
+      transition: fill-opacity 0.5s ease-in-out;
+    }
+
+    &:active svg {
+      fill-opacity: 0.5;
+    }
+  }
+}

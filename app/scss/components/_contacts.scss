@@ -1,0 +1,56 @@
+.contacts {
+  display: block;
+
+  &__footer {
+
+    @include r($lg) {
+      order: -1;
+      margin: 0 auto 49px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 18px;
+
+    &--contact {
+      margin: 0 0 18px 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    transition: opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px #EFF6E7;
+      border-radius: 3px;
+    }
+
+    &:active {
+      color: $green-200;
+      box-shadow: none;
+    }
+  }
+
+  &__icon-tel,
+  &__icon-map {
+    position: absolute;
+    fill: $dark-800;
+    width: 24px;
+    left: 0;
+  }
+
+  &__icon-tel {
+    height: 24px;
+  }
+
+  &__icon-map {
+    height: 33px;
+    top: 7px;
+  }
+}
