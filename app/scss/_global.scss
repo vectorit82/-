@@ -76,43 +76,6 @@ img {
     box-shadow: inset 0 4px 4px rgba($black, 0.25);
     color: rgba($white, 0.5);
   }
-
-  &__cart {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-   
-    & svg {
-      transition: fill-opacity 0.5s ease-in-out;
-    }
-
-    &:active svg {
-      fill-opacity: 0.5;
-    }
-  }
-}
-
-.product-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(17, 17, 17, 0.2);
-  border-radius: 6px;
-  position: relative;
-  padding: 56px 0 18px;
-  transition: border 0.5s ease-in-out;
-
-  @include r($md) {
-    max-width: 100%;
-  }
-
-  &:hover {
-    border: 1px solid $green-900;
-  }
-
-  &__action {
-    padding: 11px;
-  }
 }
 
 .container {
