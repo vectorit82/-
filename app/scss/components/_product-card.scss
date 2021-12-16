@@ -184,18 +184,4 @@
       }
     }
   }
-
-  &__btn {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-   
-    & svg {
-      transition: fill-opacity 0.5s ease-in-out;
-    }
-
-    &:active svg {
-      fill-opacity: 0.5;
-    }
-  }
 }

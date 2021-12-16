@@ -14,6 +14,9 @@ $(function () {
   });
 
 
+  $('.catalog__category-list').each(element, new SimpleBar());
+
+
   // $("#rateYo").rateYo({
   //   starWidth: "40px",
   //   normalFill: "#A0A0A0",

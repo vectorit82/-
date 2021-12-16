@@ -1,0 +1,60 @@
+.form-checkbox {
+  position: relative;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+
+    &:checked + .form-checkbox__fake::before {
+      opacity: 1;
+    }
+
+    &:checked + .form-checkbox__fake {
+      border: 1px solid $dark-500;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover .form-checkbox__fake {
+      border: 1px solid $dark-500;
+    }
+  }
+
+  &__fake {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $silver-600;
+    border-radius: 3px;
+    background-color: $silver-100;
+    margin-right: 12px;
+    transition: border 0.3s linear;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      background-image: url('../images/catalog/Vector.svg');
+      @extend %bg;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 8px;
+      opacity: 0;
+      transition: opacity 0.3s linear;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $dark-500;
+  }
+}

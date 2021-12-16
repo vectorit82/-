@@ -3,5 +3,204 @@
 
   &__title {
     margin-bottom: 48px;
+    text-transform: none;
+    font-size: 42px;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__filters {
+    max-width: 300px;
+    width: 100%;
+    margin-right: 32px;
+
+    @include r($lg) {
+      margin-right: 10px;
+    }
+  }
+
+  &__dropdown {
+    margin-bottom: 30px;
+    position: relative;
+
+    &--choice,
+    &--num {
+      margin: 0 15px 0 0;
+    }
+  }
+
+  &__category-list {
+    padding: 18px;
+    width: 100%;
+    border: 1px solid $silver-600;
+    overflow: auto;
+    margin-top: -1px;
+    border-radius: 0 0 8px 8px;
+
+    &--category {
+      height: 317px;
+    }
+
+    &--right {
+      position: absolute;
+      padding: 15px 0px 15px 9px;
+      z-index: 2;
+      background-color: $white;
+    }
+  }
+
+  &__category-item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &__category-link {
+    font-size: 18px;
+    display: block;
+
+    &--right {
+      font-size: 14px;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  &__filters-btn {
+    position: relative;
+    width: 100%;
+    font-size: 24px;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    color: $dark-900;
+    border: 1px solid $silver-600;
+    text-align: left;
+    padding: 18px 18px;
+    border-radius: 8px 8px 0 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../images/catalog/chevron.svg');
+      @extend %bg;
+      width: 18px;
+      height: 10px;
+      right: 24px;
+      top: 28px;
+    }
+
+    &--choice,
+    &--num {
+      font-size: 14px;
+      
+      padding: 15px 11px 15px 11px;
+
+      &::after {
+        width: 11px;
+        height: 6px;
+        top: 20px;
+        right: 15px;
+      }
+    }
+
+    &--choice {
+      width: 149px;
+    }
+
+    &--num {
+      width: 99px;
+    }
+  }
+
+  &__content {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__inner-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 387px;
+    margin: 0 0 48px auto;
+  }
+
+  &__btn-list {
+    background-image: url('../images/catalog/icon-btn-view-list.svg');
+    @extend %bg;
+    width: 47px;
+    height: 47px;
+    margin-right: 15px;
+  }
+
+  &__btn-grid {
+    background-image: url('../images/catalog/icon-btn-view-grid-active.svg');
+    @extend %bg;
+    width: 47px;
+    height: 47px;
+  }
+
+  &__product-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 48px;
+
+    @include r($xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include r($lg) {
+      grid-gap: 10px;
+    }
+
+    @include r($md) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__product-link {
+    margin-bottom: 0;
+  }
+
+  &__condition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 18px;
+  }
+}
+
+.form-price {
+
+  & span {
+    color: $silver-600;
+
+  }
+
+  &__input {
+    text-align: center;
+    background: #F6F6F6;
+    border: 1px solid #C1C1C1;
+    border-radius: 3px;
+    width: 80px;
+    padding: 12px 0;
+    margin: 0 6px;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 1;
+      color: $dark-500;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
   }
 }

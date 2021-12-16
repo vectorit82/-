@@ -4,4 +4,33 @@
     list-style: none;
     display: flex;
   }
+
+  &__item {
+    position: relative;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    color: $dark-500;
+    padding-right: 16px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../images/breadcrumps/chevron.svg');
+      width: 6px;
+      height: 10px;
+      right: 6px;
+      top: 3px;
+    }
+
+    &:last-child {
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: inherit;
+  }
 }
