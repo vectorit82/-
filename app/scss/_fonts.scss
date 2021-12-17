@@ -38,6 +38,15 @@
   font-family: 'Ruda';
   font-weight: 600;
   font-style: normal;
+  src: url('../fonts/Ruda-Regular.woff2') format('woff2'),
+        url('../fonts/Ruda-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ruda';
+  font-weight: 600;
+  font-style: normal;
   src: url('../fonts/Ruda-SemiBold.woff2') format('woff2'),
         url('../fonts/Ruda-SemiBold.woff') format('woff');
   font-display: swap;

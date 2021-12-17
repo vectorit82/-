@@ -5,7 +5,7 @@
       <div class="catalog__filters">
 
         <div class="catalog__dropdown">
-          <button class="catalog__filters-btn">Категории</button>
+          <button class="catalog__filters-btn catalog__filters-btn--category">Категории</button>
           <ul class="catalog__category-list catalog__category-list--category">
             <li class="catalog__category-item">
               <a class="catalog__category-link" href="#">Овощи и фрукты</a>
@@ -47,8 +47,8 @@
         </div>
 
         <div class="catalog__dropdown">
-          <button class="catalog__filters-btn">Предложения</button>
-          <ul class="catalog__category-list">
+          <button class="catalog__filters-btn catalog__filters-btn--suggestions">Предложения</button>
+          <ul class="catalog__category-list catalog__category-list--suggestions">
 
             <li class="catalog__category-item">
               <form class="form-chekbox" action="#">
@@ -84,8 +84,8 @@
         </div>
 
         <div class="catalog__dropdown">
-          <button class="catalog__filters-btn">Бренд</button>
-          <ul class="catalog__category-list">
+          <button class="catalog__filters-btn catalog__filters-btn--brand">Бренд</button>
+          <ul class="catalog__category-list catalog__category-list--brand">
 
             <li class="catalog__category-item">
               <form class="form-chekbox" action="#">
@@ -151,24 +151,27 @@
         </div>
 
         <div class="catalog__dropdown">
-          <button class="catalog__filters-btn">Цена</button>
-          <div class="catalog__category-list">
+          <button class="catalog__filters-btn catalog__filters-btn--price">Цена</button>
+          <div class="catalog__category-list catalog__category-list--price">
             <form class="form-price" action="#">
               <ul class="form-price__inner">
 
                 <li class="form-price__item">
                   <span>от</span>
-                  <input class="form-price__input" type="text" placeholder="100">
+                  <div class="form-price__input form-price__input--from" type="text"></div>
                   <span>₽</span>
                 </li>
 
                 <li class="form-price__item">
                   <span>до</span>
-                  <input class="form-price__input" type="text" placeholder="1000">
+                  <div class="form-price__input form-price__input--to" type="text"></div>
                   <span>₽</span>
                 </li>
 
               </ul>
+
+              <input class="form-price__slider" type="text" data-min="0" data-max="1000" data-from="100" data-to="900">
+
             </form>
           </div>
         </div>
@@ -180,7 +183,7 @@
 
           <div class="catalog__dropdown catalog__dropdown--choice">
             <button class="catalog__filters-btn catalog__filters-btn--choice">По названию</button>
-            <ul class="catalog__category-list catalog__category-list--right">
+            <ul class="catalog__category-list catalog__category-list--choice">
               
               <li class="catalog__category-item">
                 <a class="catalog__category-link catalog__category-link--right" href="#">По популярности</a>
@@ -203,7 +206,7 @@
 
           <div class="catalog__dropdown catalog__dropdown--num">
             <button class="catalog__filters-btn catalog__filters-btn--num">по 12</button>
-            <ul class="catalog__category-list catalog__category-list--right">
+            <ul class="catalog__category-list catalog__category-list--num">
               
               <li class="catalog__category-item">
                 <a class="catalog__category-link catalog__category-link--right" href="#">по 18</a>

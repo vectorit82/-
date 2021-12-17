@@ -221,23 +221,23 @@
 
     &:hover {
       background-color: $green-200;
-      border-radius: 6px 6px 0 0;
+      // border-radius: 6px 6px 0 0;
 
       @include r($lg) {
         background-color: $white;
         border-radius: 0;
       }
 
-      &::after {
-        transform: rotate(-180deg);
-      }
+      // &::after {
+      //   transform: rotate(-180deg);
+      // }
     }
 
-    &:hover~.header__catalog-list {
-      transform: translateY(0);
-      opacity: 1;
-      transition: opacity 0.5s ease-in-out;
-    }
+    // &:hover~.header__catalog-list {
+    //   transform: translateY(0);
+    //   opacity: 1;
+    //   transition: opacity 0.5s ease-in-out;
+    // }
   }
 
   &__catalog-list {
@@ -256,12 +256,13 @@
     &.catalog--active {
       transform: translateY(0);
       opacity: 1;
+      transition: opacity 0.5s ease-in-out;
     }
 
-    &:hover {
-      transform: translateY(0);
-      opacity: 1;
-    }
+    // &:hover {
+    //   transform: translateY(0);
+    //   opacity: 1;
+    // }
   }
 
   &__catalog-link {

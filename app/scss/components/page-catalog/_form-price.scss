@@ -1,0 +1,72 @@
+.form-price {
+
+  & span {
+    color: $silver-600;
+    font-family: 'Ruda', sans-serif;
+    font-weight: 400;
+  }
+
+  &__input {
+    text-align: center;
+    background: #F6F6F6;
+    border: 1px solid #C1C1C1;
+    border-radius: 3px;
+    width: 80px;
+    padding: 12px 0;
+    margin: 0 6px;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 1;
+      color: $dark-500;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.irs--flat .irs-line {
+  top: 8px;
+  height: 2px;
+  background-color: #C4C4C4;
+  border-radius: 4px;
+}
+
+.irs--flat .irs-handle {
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-color: $green-900;
+  border-radius: 50%;
+}
+
+.irs--flat .irs-bar {
+  top: 8px;
+  height: 2px;
+  background-color: $green-900;
+}
+
+.irs--flat .irs-handle>i:first-child {
+  display: none;
+}
+
+.irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single {
+  display: none;
+}
+
+.irs--flat .irs-min, .irs--flat .irs-max {
+  display: none;
+}
+
+.irs--flat {
+  height: 18px;
+}
